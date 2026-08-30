@@ -152,7 +152,7 @@ def html_doc():
       <div class="go"><button class="btn btn-blue" type="submit">Search</button></div>
     </form>
     <div class="popular"><span class="l">Popular Searches:</span>{popular}</div>
-    <div class="trust"></div>
+    <div style="height:58px" aria-hidden="true"></div>
   </div>
 </section>
 
