@@ -38,6 +38,9 @@ CATS = [
     ("Hotels & Resorts","hotels-resorts",5,"bed","#d6f0f0","#17a2a2"),
     ("General Services","general-services",5,"tools","#fdeede","#e0912a"),
     ("Jewellery Shops","jewellery-shops-goa",4,"gem","#e7effc","#1f5fd0"),
+    ("Tours & Travels","tours-travels",3,"compass","#e0f2ff","#2b8fd0"),
+    ("Beauty & Care","beauty-care",2,"spark","#fde8f3","#d6489a"),
+    ("Hospitals & Clinics","hospitals-clinics-in-goa",3,"cross","#ffe6e2","#e0574c"),
 ]
 # Real featured listings (name, category, area, slug, seed)
 FEATURED = [
@@ -71,6 +74,9 @@ def ic(n, s=26):
     "bed":'<path d="M3 7v11M3 12h18v6M21 12v-2a3 3 0 0 0-3-3H9v5"/>',
     "tools":'<path d="M14 7a3 3 0 0 1 4 4l-8 8-4 1 1-4 7-7zM13 8l3 3"/>',
     "gem":'<path d="M6 3h12l3 6-9 12L3 9l3-6zM3 9h18"/>',
+    "compass":'<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z"/>',
+    "spark":'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>',
+    "cross":'<path d="M10 3h4v5h5v4h-5v5h-4v-5H5V8h5z"/>',
     "search":'<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>',
     "pin":'<path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>',
     "arrow":'<path d="M5 12h14M13 6l6 6-6 6"/>',"plus":'<path d="M12 5v14M5 12h14"/>',
