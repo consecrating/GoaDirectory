@@ -14,6 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 SITE = "Goa Directory"
 TAGLINE = "Goa's Trusted Local Classifieds"
+BASE_CSS = (ROOT / "assets" / "base.css").read_text(encoding="utf-8")
 
 # ---- Real content captured from the live site audit -------------------------
 
@@ -255,8 +256,8 @@ def head(d: Direction, title: str, rel_prefix: str) -> str:
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{d.fonts}">
-<link rel="stylesheet" href="{rel_prefix}assets/base.css">
 <style>
+{BASE_CSS}
 {token_css(d)}
 {extra_css(d)}
 </style>
@@ -690,8 +691,8 @@ def render_index() -> str:
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{gfonts('Manrope:wght@500;700;800','Inter:wght@400;600')}">
-<link rel="stylesheet" href="assets/base.css">
 <style>
+{BASE_CSS}
 :root {{ --primary:#0b3b49; --accent:#e85d3f; --font-display:"Manrope",sans-serif; --font-body:"Inter",sans-serif; }}
 .idx-hero {{ background:linear-gradient(135deg,#0b3b49,#123f4d); color:#fff; }}
 .idx-grid {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1.2rem; }}
