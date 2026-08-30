@@ -1,0 +1,149 @@
+{
+  "settings": {
+    "model": "nano-banana-pro",
+    "aspect_ratio": "16:9",
+    "resolution": "1K",
+    "homepage_output_directory": "home",
+    "listing_output_directory": "listing"
+  },
+  "global_prompt": "Create one high-fidelity, production-realistic desktop website UI preview for GoaDirectory, shown as a straight-on 16:9 screenshot with no browser chrome, no laptop frame, no presentation board, no surrounding mockup, and no perspective distortion. This is a real local business directory for Goa, India, not a travel-booking site. Use a responsive 12-column layout, crisp spacing, readable interface text, proper alignment, coherent reusable components, semantic visual hierarchy, visible keyboard-focus treatment, and WCAG AA contrast. Render only the requested page and direction. Keep the visual design implementable in WordPress/ClassiPress. Use one clear H1. Do not invent ratings, reviews, prices, opening hours, awards, business counts, user counts, or popularity statistics. Do not use lorem ipsum. Do not display keyword stuffing. Avoid generic AI purple gradients, excessive glassmorphism, random blobs, cartoon icons, identical card grids, and tiny illegible labels. Preserve the exact GoaDirectory brand name and the supplied real business names. Use clean simple line icons where needed. Prioritize an obvious primary task and excellent scanability.",
+  "listing_references": [
+    {
+      "image": "https://www.goadirectory.in/wp-content/uploads/2016/04/Mercedes-Benz-Logo-500x404.png",
+      "text": "Real Counto Motors Mercedes-Benz identity image from the listing; use faithfully only inside the listing gallery or brand area.",
+      "mime_type": "image/png"
+    },
+    {
+      "image": "https://www.goadirectory.in/wp-content/uploads/2016/04/Mercedes-Benz-GLS-350-d.jpg",
+      "text": "Real vehicle gallery image from the Counto Motors listing; use as the primary automotive photograph.",
+      "mime_type": "image/jpeg"
+    },
+    {
+      "image": "https://www.goadirectory.in/wp-content/uploads/2016/04/Mercedes-Benz-S-350-d.jpg",
+      "text": "Real vehicle gallery image from the Counto Motors listing; use as a secondary gallery photograph.",
+      "mime_type": "image/jpeg"
+    }
+  ],
+  "directions": [
+    {
+      "number": 1,
+      "slug": "goa-atlas",
+      "name": "Goa Atlas",
+      "summary": "Cartographic editorial discovery with a strong sense of place.",
+      "palette": ["#0B3B49", "#E85D3F", "#F4E8D1", "#F8FAF7", "#172126"],
+      "typography": "Manrope for interface, Newsreader for editorial accents",
+      "home_prompt": "Direction: Goa Atlas. Design a search-first homepage that feels like a beautifully edited local atlas. Use deep estuary teal, laterite coral, warm sand, off-white, and ink. Header: compact GoaDirectory wordmark, Discover, Categories, Guides, For Business, and a coral Post a Listing button. Hero composition is asymmetric: left side has eyebrow 'LOCAL KNOWLEDGE, MADE USEFUL', H1 'Find trusted local businesses across Goa', short line 'Search services, shops and places by category or area', and one large cream search panel with fields 'What are you looking for?', 'Category', 'Area in Goa', plus a coral Search button. Right side is a refined abstract Goa map with subtle rivers, roads, labeled locality chips Vasco, Panaji, Margao, Mapusa, and Ribandar, not a tourist collage. Under the hero show eight compact category tiles for Automobiles, Restaurants, Hotels & Resorts, Beauty & Care, Electronics, Interior & Furniture, General Services, and Tours & Travels. Continue into a visible 'Featured around Goa' editorial row using real names S Nizami Interiors, Mahalaxmi Electric Co, and 13 Studio Unisex Salon. Use fine map-line motifs, generous negative space, no gradients, and strong section numerals.",
+      "listing_prompt": "Direction: Goa Atlas. Design the Counto Motors listing as a place-rich local business page in the same estuary teal, laterite coral, warm sand, off-white, and ink system. Begin with compact header and breadcrumb 'Home / Automobiles / Counto Motors'. Use exactly one H1: 'Counto Motors Mercedes-Benz Dealership in Ribandar, Goa'. Add an honest status badge 'Listing expired' and category chip 'Automobiles'. Above the fold use a 7/5 split: a large real vehicle gallery with one hero image and two stacked thumbnails on the left; a sticky cream business summary card on the right with location 'Mercedes Benz Showroom, Ribandar, Goa 403006', phone '8308-10-5556', and prominent Call, Directions, Contact Owner buttons plus Save and Share icon actions. Under the gallery show a slim map-coordinate strip and a scannable About section beginning 'Authorized Mercedes-Benz passenger vehicle dealership for Goa' without ratings or invented details. Include a small '13 photos' label and a clear note that address/details should be verified because the listing is expired. Use contour lines and locality-map cues subtly, never behind body text.",
+      "home_references": [],
+      "listing_references": "shared"
+    },
+    {
+      "number": 2,
+      "slug": "coastal-signal",
+      "name": "Coastal Signal",
+      "summary": "A bold digital utility inspired by marine wayfinding and signal flags.",
+      "palette": ["#071A2B", "#19C6C2", "#FF6B35", "#F5F7F3", "#B9E5E2"],
+      "typography": "Space Grotesk for display, Inter for interface",
+      "home_prompt": "Direction: Coastal Signal. Create a bold modern utility homepage using midnight navy, bright aqua, signal orange, sea-foam, and chalk white. Use a dark hero with a very large but controlled H1 'Goa, find what you need nearby.' A bright horizontal search rail crosses the composition with keyword input 'Search businesses or services', segmented area selector 'All Goa', and orange Find it button. Add quick-search text links 'Car rental', 'Electricians', 'Salons', 'Restaurants', 'Hotels'. Build a distinctive modular signal-flag visual system: crisp rectangles, diagonal cuts, coded category markers, never decorative blobs. Below, show a bento-style 'Popular right now' area with varied card sizes, one image-led card for Royal Car & Bike Rental, one typographic card for Mahalaxmi Electric Co, one compact card for A One Flowers, and a mini category index. Header uses white logo, Explore, Areas, Guides, List your business. Add a thin local navigation ticker with Panaji, Vasco, Margao, Mapusa, Ponda, Calangute. Keep it energetic, dense enough to feel useful, and clearly unlike a tourism landing page.",
+      "listing_prompt": "Direction: Coastal Signal. Create a high-contrast Counto Motors listing page using midnight navy, bright aqua, signal orange, sea-foam, and white. Header and breadcrumb are compact. Use one H1 'Counto Motors Mercedes-Benz Dealership in Ribandar, Goa' on a navy title rail, with orange 'Expired listing' marker and aqua 'Automobiles' marker. Main layout is editorial bento rather than a conventional sidebar: large landscape car photograph occupies the upper left, a Mercedes/Counto identity tile and two gallery thumbnails form the right edge, and a navy action dock sits directly below with Call 8308-10-5556, Directions, Contact Owner, Save. Show 'Mercedes Benz Showroom, Ribandar, Goa 403006' prominently. The next visible band contains 'About Counto Motors', a short verified description, and a compact static map preview with click-to-load message. Use signal-stripe dividers and oversized section numbers 01 Gallery, 02 Details. No rating stars, review score, price, business hours, or fake verification badge.",
+      "home_references": [],
+      "listing_references": "shared"
+    },
+    {
+      "number": 3,
+      "slug": "konkan-editorial",
+      "name": "Konkan Editorial",
+      "summary": "Warm magazine typography for local stories and high-intent discovery.",
+      "palette": ["#F5EFE3", "#1C1B19", "#B6402C", "#D9A441", "#6A7565"],
+      "typography": "Fraunces for display, DM Sans for interface",
+      "home_prompt": "Direction: Konkan Editorial. Create an elegant magazine-inspired GoaDirectory homepage on warm paper with black ink, vermilion, muted marigold, and sage. Header feels like an independent local publication: GoaDirectory masthead, Browse, Areas, Local Guides, About, and understated Submit a Listing. Hero uses a surprising editorial composition, not left-text/right-image: giant two-line serif H1 'The local Goa directory, edited for real life.' spans the width, then a horizontal search strip is inset below with 'What do you need?', 'Where in Goa?', and Search. Add a small issue-style annotation 'Shops, services, stays and people'. Below, create an editorial mosaic titled 'Start with a category' where Automobiles, Restaurants, Beauty & Care, Electronics, Hotels & Resorts, and General Services have typographic blocks of different proportions. Show a 'Local shortlist' story-led row with S Nizami Interiors, SANCTIFY, and Verlekar Jewellers using restrained imagery, meaningful excerpts, and location labels. Use hairline rules, drop caps, folio numbers, no shadows, no gradients, and avoid a standard SaaS card grid.",
+      "listing_prompt": "Direction: Konkan Editorial. Create the Counto Motors page as a premium local feature article while retaining directory utility. Warm paper background, black ink, vermilion, marigold, and sage. Header and breadcrumb are understated. Use exactly one large serif H1 'Counto Motors Mercedes-Benz Dealership in Ribandar, Goa', a small Automobiles kicker, and an 'Expired listing' note styled as an editorial correction label rather than a promotional badge. Lead with a wide cinematic real Mercedes image crossing an asymmetric 8-column story area, with the logo and two smaller gallery crops arranged like contact sheets. Beside it, a clean facts column displays address 'Mercedes Benz Showroom, Ribandar, Goa 403006', phone '8308-10-5556', 13 photos, and Call, Directions, Contact Owner actions. Below show an About section with a large serif pull line 'Authorized Mercedes-Benz passenger vehicle dealership for Goa' and concise body copy. Add a small map panel and related Automobiles links at the lower edge. Use visible baseline grid and hairlines; no stars, prices, invented hours, or fake testimonials.",
+      "home_references": [],
+      "listing_references": "shared"
+    },
+    {
+      "number": 4,
+      "slug": "local-first",
+      "name": "Local First",
+      "summary": "Friendly neighborhood utility with large touch targets and plain-language actions.",
+      "palette": ["#F8F3E7", "#25352D", "#D8F25A", "#FF7A59", "#FFFFFF"],
+      "typography": "Sora for headings, Source Sans 3 for body",
+      "home_prompt": "Direction: Local First. Design a friendly, inclusive neighborhood directory homepage with warm cream, dark forest, acid-lime highlight, soft coral, and white. Avoid luxury styling. Header has GoaDirectory, Find a business, Browse categories, Local areas, Help, and dark Post your listing button. Hero H1 is plain and useful: 'Find local businesses you can contact today'. Directly below, build a large three-part accessible search box with labels 'Service or business', 'Category', 'Town or area', and a high-contrast Search Goa button. Add six chunky quick-action pills: Find a restaurant, Book a taxi, Repair my phone, Find an electrician, Beauty services, Hotels & resorts. Under this, show 'New on GoaDirectory' in a varied two-column list with real entries Property, Civil & Criminal Lawyer in Sancoale, Saranya Mobile Repairing Store, Royal Car & Bike Rental, and A One Flowers. Include a compact 'Browse by area' strip for Vasco, Panaji, Margao, Mapusa, Dabolim, Ribandar. Use rounded corners sparingly, thick 2px borders, large icons and labels, no gradients, no floating decorative shapes, no fake social proof.",
+      "listing_prompt": "Direction: Local First. Design an exceptionally clear Counto Motors detail page for quick contact. Use warm cream, dark forest, acid-lime, coral, and white with large text and touch targets. After breadcrumb, use one H1 'Counto Motors Mercedes-Benz Dealership in Ribandar, Goa', category Automobiles, and a visible non-alarming 'This listing has expired. Please verify details before visiting.' notice. Arrange a large real car image with a thumbnail strip above a plain contact panel. The panel must show phone '8308-10-5556', address 'Mercedes Benz Showroom, Ribandar, Goa 403006', and large buttons Call now, Get directions, Contact owner. Add secondary Save and Share actions. Below, show three clear tabs or anchored sections About, Photos (13), Location. The visible About text states that Counto Motors is described as the authorized Mercedes-Benz passenger vehicle dealership for Goa. Add a static map card labeled 'Load interactive map'. No rating, price, hours, owner portrait, or comment form above the fold. Use 2px outlines and friendly simple icons.",
+      "home_references": [],
+      "listing_references": "shared"
+    },
+    {
+      "number": 5,
+      "slug": "cobalt-directory",
+      "name": "Cobalt Directory",
+      "summary": "Structured civic-modern clarity for a broad, authoritative directory.",
+      "palette": ["#1646D8", "#0E1733", "#F3F6FC", "#FFC83D", "#FFFFFF"],
+      "typography": "IBM Plex Sans for interface, IBM Plex Serif for key editorial text",
+      "home_prompt": "Direction: Cobalt Directory. Create an authoritative civic-modern homepage using saturated cobalt, midnight ink, pale blue-gray, warm yellow, and white. Use strict Swiss grid logic and data-directory clarity without looking governmental. Header: GoaDirectory block mark, Directory, Categories, Areas, Guides, About, yellow Add a business action. The hero is a full-width cobalt field with white H1 'Search Goa's local business directory' and a precise search console with Keyword, Category, Location, and dark Search button. Along the bottom of the hero show crawlable area links Vasco-da-Gama, Panaji, Margao, Mapusa, Dabolim, Ribandar. The next section uses a numbered index instead of cards: 01 Automobiles, 02 Restaurants, 03 Electronics, 04 Hotels & Resorts, 05 Interior & Furniture, 06 General Services, each with a line icon and View category link. To the right or below, show a compact 'Recently added' table/list with real business names and category/location metadata. Use rules, tabs, labels, and modular columns; almost square corners; no gradients or soft blobs.",
+      "listing_prompt": "Direction: Cobalt Directory. Create a precise civic-modern listing detail page in cobalt, midnight ink, pale blue-gray, yellow, and white. Use a compact utility header and breadcrumb. One H1: 'Counto Motors Mercedes-Benz Dealership in Ribandar, Goa'. Directly beneath, show category Automobiles, published April 13, 2016, and a yellow outlined status 'Expired listing'. Build a strong 8/4 grid: left has a large car image gallery with numbered thumbnail index 01, 02, 03 and 'View all 13'; right has a structured facts panel with address 'Mercedes Benz Showroom, Ribandar, Goa 403006', phone '8308-10-5556', action buttons Call, Directions, Contact Owner, and small Save/Share controls. Below, render an anchored section navigation 'Overview / Gallery / Location / Related' followed by a clean Overview text block and a static location panel. Typography must feel exact and legible, with 1px grid rules and yellow active-state highlights. Do not show a price/currency field, ratings, fabricated hours, or view counts.",
+      "home_references": [],
+      "listing_references": "shared"
+    },
+    {
+      "number": 6,
+      "slug": "market-map",
+      "name": "Market Map",
+      "summary": "Spatial-first discovery with a useful map and synchronized results.",
+      "palette": ["#F6F1E8", "#172B3A", "#F05A3C", "#A8DADC", "#E9C46A"],
+      "typography": "Outfit for headings, Atkinson Hyperlegible for interface",
+      "home_prompt": "Direction: Market Map. Design a map-first GoaDirectory homepage that immediately communicates local discovery. Use parchment, dark blue ink, coral, pale aqua, and muted yellow. Header is compact with GoaDirectory, Search, Categories, Local guides, List a business. Beneath it, place H1 'Explore businesses across Goa' and a large search control. The main hero is a 55/45 split: left side is a stylized but geographically plausible Goa map with coastline, Mandovi and Zuari hints, locality labels Panaji, Mapusa, Margao, Vasco, Ponda, Dabolim, Ribandar, and tasteful category pins; right side is a scroll-like result stack headed 'Places and services near you' showing real listings Royal Car & Bike Rental, A One Flowers, Mahalaxmi Electric Co, and 13 Studio Unisex Salon. Each result has category and area, no ratings. Below the split show filter chips Automobiles, Food, Stay, Beauty, Repairs, Services and a slim 'Explore all categories' index. The map is the primary visual, not a background. No gradients, no tourist stock collage, and no invented distance values.",
+      "listing_prompt": "Direction: Market Map. Create a spatial-first Counto Motors page using parchment, dark blue ink, coral, pale aqua, and muted yellow. Use one H1 'Counto Motors Mercedes-Benz Dealership in Ribandar, Goa' with Automobiles and Expired listing labels. Hero split is intentionally reversed from a conventional listing: left 42% is a large static map panel centered on Ribandar with the address 'Mercedes Benz Showroom, Ribandar, Goa 403006', a coral pin, and a Get directions action; right 58% contains a cinematic real Mercedes image with an overlapping compact '13 photos' control. A horizontal business action bar below shows Call 8308-10-5556, Contact owner, Save, Share. Next, show an editorial About block and a row of two smaller gallery images. Include a clear verification note for the expired listing. Use map-grid coordinates and route-line accents only as functional visual cues. No fake route time, open/closed status, distance, ratings, price, or hours.",
+      "home_references": [],
+      "listing_references": "shared"
+    },
+    {
+      "number": 7,
+      "slug": "heritage-modern",
+      "name": "Heritage Modern",
+      "summary": "Contemporary Goan craft cues with refined editorial restraint.",
+      "palette": ["#FFF8EA", "#7A2E2A", "#173B3F", "#2F6F73", "#D7B56D"],
+      "typography": "Cormorant Garamond for display, Work Sans for interface",
+      "home_prompt": "Direction: Heritage Modern. Create a refined contemporary GoaDirectory homepage inspired by Goan architectural rhythm and painted tile geometry without becoming ornate or nostalgic. Palette: ivory, deep laterite, dark teal, blue-green, muted brass. Header uses an elegant GoaDirectory wordmark, Discover, Categories, Places, Stories, and Post a Listing. Hero composition is centered and spacious with a fine geometric border, serif H1 'Goa's local businesses, all in one place', short supporting line, and a large teal search panel with fields 'Business or service', 'Category', 'Area' and brass Search button. Place a narrow image ribbon below showing authentic categories through restrained crops: interiors, local shop, taxi, flowers. Follow with an asymmetric 'Browse the directory' section combining six numbered category links and one larger editorial tile 'A better way to find local'. Use subtle azulejo-inspired line patterns at section edges, flat colors, no gradients, very restrained shadows. Show real listing names S Nizami Interiors, Verlekar Jewellers, Vasco Pest Control, and SANCTIFY in a lower preview row.",
+      "listing_prompt": "Direction: Heritage Modern. Create a refined Counto Motors listing in ivory, deep laterite, dark teal, blue-green, and muted brass. Use a thin patterned top rule, compact breadcrumb, and exactly one elegant serif H1 'Counto Motors Mercedes-Benz Dealership in Ribandar, Goa'. Add understated chips Automobiles and Expired listing. Use a gallery composition inspired by an architectural courtyard: one large real car image framed by ivory margins, the Counto/Mercedes logo in a square brass-edged inset, and two smaller photos below. To the side, a dark teal information panel displays phone '8308-10-5556', address 'Mercedes Benz Showroom, Ribandar, Goa 403006', and high-contrast Call, Directions, Contact Owner buttons. Below, show About Counto Motors and Location as balanced editorial columns, with the verified description only. Use tile-line patterns as dividers, never under text. Do not invent ratings, heritage claims, opening hours, prices, or testimonials.",
+      "home_references": [],
+      "listing_references": "shared"
+    },
+    {
+      "number": 8,
+      "slug": "night-bazaar",
+      "name": "Night Bazaar",
+      "summary": "A premium dark-mode directory with illuminated wayfinding.",
+      "palette": ["#0B0D10", "#171B21", "#B8FF62", "#FF7043", "#E8EDF2"],
+      "typography": "Geist for interface, JetBrains Mono for metadata",
+      "home_prompt": "Direction: Night Bazaar. Create a sophisticated dark-mode GoaDirectory homepage for evening and mobile-savvy discovery, using near-black, graphite, luminous lime, hot orange, and cool white. Keep it premium and accessible, not cyberpunk. Header: GoaDirectory, Explore, Categories, Areas, Guides, with lime List your business. Hero uses an oversized compact sans H1 'Local Goa, switched on.' and supporting line 'Find businesses, services and places across the state.' A dark search console has visible labels What, Category, Area and a bright lime Search button. Add an orange quick-link rail for Restaurants, Taxi Booking, Hotels & Resorts, Beauty & Care, Automobiles. The next area is a gapless editorial bento with varied tiles: image-led Royal Car & Bike Rental, typographic SANCTIFY, compact A One Flowers, and a location tile for Vasco. Use thin luminous keylines, mono metadata, one orange accent image treatment, and subtle grain. No neon gradients, glowing text, glass cards, fake live-status dots, or star ratings.",
+      "listing_prompt": "Direction: Night Bazaar. Create an elegant dark Counto Motors listing using near-black, graphite, luminous lime, hot orange, and cool white. Use a compact header and mono breadcrumb. Exactly one H1 'Counto Motors Mercedes-Benz Dealership in Ribandar, Goa'. Add orange Expired listing and outlined Automobiles labels. Make the real Mercedes vehicle image dominant on the left with a dark filmstrip of two thumbnails and '13 photos'; on the right, use a graphite details panel with the Mercedes/Counto logo, address 'Mercedes Benz Showroom, Ribandar, Goa 403006', phone '8308-10-5556', and lime Call now plus outlined Directions and Contact Owner actions. Below, a black anchored nav Overview / Gallery / Location / Related leads into a readable About section and static map card. Use mono labels, crisp keylines, minimal glow only on active focus states. No fake open-now indicator, ratings, prices, view counts, or invented business verification.",
+      "home_references": [],
+      "listing_references": "shared"
+    },
+    {
+      "number": 9,
+      "slug": "search-canvas",
+      "name": "Search Canvas",
+      "summary": "Ultra-minimal search dominance with calm typography and progressive disclosure.",
+      "palette": ["#FFFFFF", "#111827", "#2563EB", "#EAF0FF", "#E35D3F"],
+      "typography": "Plus Jakarta Sans for interface, Lora for small editorial accents",
+      "home_prompt": "Direction: Search Canvas. Create an ultra-clean GoaDirectory homepage where search is the visual identity. White canvas, near-black text, pure blue, very pale blue, and a restrained terracotta accent. Header is almost invisible: GoaDirectory, Browse, Areas, Guides, Post a Listing. In the center, use one immense but readable H1 'What are you looking for in Goa?' followed by a single 72px-tall search field 'Try electricians, salons, car rental...' with blue Search button and a second compact area selector 'All Goa'. Beneath, show plain text suggestions 'Popular: Automobiles, Restaurants, Electronics, Hotels & Resorts, General Services'. Use generous whitespace, then a single horizontal 'Fresh listings' rail with large editorial image cards for Property, Civil & Criminal Lawyer in Sancoale, Saranya Mobile Repairing Store, and Royal Car & Bike Rental. A slim lower band previews categories as a clean alphabetical index. Avoid decorative hero imagery, gradients, maps, background patterns, floating shapes, or dense bento layouts. Every element must serve search or navigation.",
+      "listing_prompt": "Direction: Search Canvas. Create an ultra-minimal Counto Motors listing detail page on white with near-black, pure blue, pale blue, and restrained terracotta. Header and breadcrumb are quiet. Use one H1 'Counto Motors Mercedes-Benz Dealership in Ribandar, Goa' with small Automobiles link and terracotta 'Expired listing' notice. The upper page is mostly a huge real Mercedes car image, with two precise thumbnail crops and 'View all 13 photos' button. Directly beneath, a clean horizontal facts/actions rail shows address 'Mercedes Benz Showroom, Ribandar, Goa 403006', phone '8308-10-5556', and blue Call, Directions, Contact Owner actions; Save and Share are icon buttons. The next visible area has a narrow readable About column and a pale-blue static map card. Keep content progressive and calm, with no boxed sidebar, no owner avatar, no decorative patterns, no ratings, prices, business hours, view counts, or keyword cloud.",
+      "home_references": [],
+      "listing_references": "shared"
+    },
+    {
+      "number": 10,
+      "slug": "trusted-goa",
+      "name": "Trusted Goa",
+      "summary": "Assurance-led local discovery with calm, mature credibility.",
+      "palette": ["#F7F3E8", "#173F35", "#C89B3C", "#8C3D2E", "#FFFFFF"],
+      "typography": "Merriweather Sans for interface, Merriweather for editorial headings",
+      "home_prompt": "Direction: Trusted Goa. Create a calm assurance-led GoaDirectory homepage using warm ivory, deep forest, muted gold, brick red, and white. Convey reliability without fake certification or ratings. Header: GoaDirectory, Find local, Categories, Areas, Guides, For businesses, with brick Post a Listing button. Hero uses deep forest background and one strong H1 'Find local businesses across Goa with confidence'. Supporting copy says 'Clear contact details, useful categories and local area search.' Place a large white search module with labeled inputs Business or service, Category, Town or area, and gold Search button. To the side, create a restrained illustration of connected directory entries and locality markers, not a shield cliché. Below show a 'Browse essential categories' row for Automobiles, Hospitals and Clinics, Electronics, Hotels & Resorts, Restaurants, and General Services. Then a trust-through-transparency section titled 'Useful details before you contact' demonstrating Address, Phone, Category, Listing status. Preview real listings Mahalaxmi Electric Co, Vasco Pest Control, and H.N. Techno Service. No fake verified badges, testimonials, metrics, gradients, or exaggerated claims.",
+      "listing_prompt": "Direction: Trusted Goa. Create a calm credibility-focused Counto Motors listing page in warm ivory, deep forest, muted gold, brick red, and white. Header and breadcrumb are clear. Exactly one H1 'Counto Motors Mercedes-Benz Dealership in Ribandar, Goa', with Automobiles and a brick notice 'Expired listing - verify details before visiting'. Use a balanced 7/5 hero: left has a large real Mercedes vehicle image and two thumbnails with '13 photos'; right has a white structured information card with business/logo image, address 'Mercedes Benz Showroom, Ribandar, Goa 403006', phone '8308-10-5556', and large Call, Directions, Contact Owner buttons. Include small Save and Share actions. A transparent-details strip labels Published April 13, 2016 and Listing status Expired. Below, show concise About and Location modules plus a static map that loads interactively only on request. Do not show ratings, reviews, pricing, hours, fake verification, or view counts. The page should earn trust through clarity and honest status disclosure, not badges.",
+      "home_references": [],
+      "listing_references": "shared"
+    }
+  ]
+}
