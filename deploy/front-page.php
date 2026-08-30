@@ -1,0 +1,359 @@
+<?php
+/**
+ * Goa Directory — redesigned homepage (front page).
+ * Standalone self-contained output (own header/footer/CSS).
+ * Reversible: delete this file to restore the previous homepage.
+ */
+if (!defined('ABSPATH')) { exit; }
+?>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goa Directory — Goa's Trusted Local Classifieds</title>
+<meta name="description" content="Discover trusted local businesses, shops, services and professionals across Goa. Browse categories, featured listings and post your ad on Goa Directory.">
+<link rel="canonical" href="https://www.goadirectory.in/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}*{margin:0}
+:root{
+  --navy:#16244a;--navy-2:#1b2c53;--blue:#1f5fd0;--blue-d:#1a52b8;
+  --ink:#2b3550;--muted:#7a8399;--yellow:#f6b71e;--bg:#ffffff;--soft:#f5f8fd;
+  --border:#e9edf4;--radius:16px;
+  --sh-sm:0 1px 2px rgba(20,35,80,.06),0 6px 16px rgba(20,35,80,.05);
+  --sh:0 14px 34px rgba(20,35,80,.10);
+  --f:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--f);color:var(--ink);background:var(--bg);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--f);line-height:1.18;font-weight:700;color:var(--navy);letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:6px}
+.wrap{width:100%;max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,3.5vw,28px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:10px;font-weight:600;font-size:.92rem;padding:.7rem 1.15rem;transition:transform .1s,box-shadow .2s,background .2s}
+.btn:active{transform:translateY(1px)}
+.btn-blue{background:var(--blue);color:#fff;box-shadow:0 8px 18px rgba(31,95,208,.28)}
+.btn-blue:hover{background:var(--blue-d)}
+.btn-white{background:#fff;color:var(--navy);border:1.5px solid #e2e7f0}
+.btn-white:hover{border-color:var(--blue);color:var(--blue)}
+.eyebrow{font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.sec{padding-block:clamp(34px,4.5vw,54px)}
+.sec-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.h2{font-size:clamp(1.5rem,2.6vw,1.9rem);font-weight:700}
+
+/* Header */
+header.hd{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--border)}
+header.hd .wrap{display:flex;align-items:center;gap:1.2rem;min-height:66px}
+.logo{display:flex;align-items:center;gap:.5rem}
+.logo .txt b{font-size:1.28rem;font-weight:800;color:var(--navy);line-height:1;letter-spacing:-.02em}
+.logo .txt b span{color:var(--blue)}
+.logo .txt small{display:block;font-size:.58rem;letter-spacing:.34em;color:var(--blue);font-weight:600;margin-top:2px}
+nav.main{display:flex;gap:1.35rem;margin:0 auto}
+nav.main a{color:#42506e;font-weight:500;font-size:.92rem;padding:.4rem 0;position:relative}
+nav.main a:hover{color:var(--blue)}
+nav.main a.active{color:var(--blue);font-weight:600}
+nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--blue);border-radius:2px}
+.hd-act{display:flex;align-items:center;gap:.6rem}
+@media(max-width:900px){nav.main{display:none}}
+
+/* Hero */
+.hero{position:relative;isolation:isolate;color:#fff;overflow:hidden}
+.hero .sky{position:absolute;inset:0;z-index:-3;background:linear-gradient(180deg,#3a2b6d 0%,#6b3f83 34%,#b5567a 60%,#e88a54 82%,#f2b06b 100%)}
+.hero .sun{position:absolute;z-index:-3;width:220px;height:220px;border-radius:50%;left:64%;top:34%;background:radial-gradient(circle,#ffd9a0,rgba(255,201,120,.35) 55%,transparent 70%);filter:blur(2px)}
+.hero .mtn{position:absolute;left:0;right:0;bottom:0;z-index:-2;height:180px;background:
+  radial-gradient(120% 100% at 20% 100%,#2b2540 40%,transparent 41%),
+  radial-gradient(120% 100% at 70% 100%,#39273f 40%,transparent 41%);opacity:.55}
+.hero .water{position:absolute;left:0;right:0;bottom:0;z-index:-2;height:70px;background:linear-gradient(180deg,rgba(255,190,140,.35),rgba(120,80,110,.5))}
+.hero .ov{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(26,20,45,.35),rgba(26,20,45,.15) 40%,rgba(26,20,45,.35))}
+.hero .palm{position:absolute;bottom:-6px;z-index:-1;color:#171226;opacity:.92}
+.hero .palm.l{left:-10px}.hero .palm.r{right:-10px;transform:scaleX(-1)}
+.hero .wrap{padding-top:clamp(46px,7vw,84px);padding-bottom:0;text-align:center;position:relative}
+.hero h1{color:#fff;font-weight:800;font-size:clamp(2.2rem,5vw,3.5rem);letter-spacing:-.02em;text-shadow:0 3px 22px rgba(0,0,0,.28)}
+.hero h1 .y{color:var(--yellow)}
+.hero .sub{font-weight:700;font-size:clamp(1.05rem,2.2vw,1.5rem);margin-top:.5rem;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.3)}
+.hero .lead{color:rgba(255,255,255,.92);margin-top:.5rem;font-size:1rem;text-shadow:0 1px 10px rgba(0,0,0,.3)}
+/* search card */
+.search{background:#fff;border-radius:14px;box-shadow:0 20px 50px rgba(15,20,50,.28);padding:.5rem;display:grid;grid-template-columns:1.6fr 1fr auto;gap:.4rem;max-width:760px;margin:1.7rem auto 0;text-align:left}
+.search .f{display:flex;align-items:center;gap:.6rem;padding:.55rem .8rem}
+.search .f+.f{border-left:1px solid var(--border)}
+.search .f .i{color:var(--blue);flex:none}
+.search .f .lab{font-size:.85rem;font-weight:600;color:var(--navy);line-height:1.1}
+.search .f .ex{font-size:.76rem;color:#9aa3b5}
+.search .f input{border:0;outline:0;font:inherit;width:100%;color:var(--navy);background:transparent}
+.search .go{display:flex;align-items:center}
+.search .go .btn{height:100%;padding-inline:1.6rem}
+/* popular */
+.popular{display:flex;gap:.5rem;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:.9rem}
+.popular .l{font-size:.82rem;font-weight:600;color:#fff}
+.popular a{background:rgba(15,20,45,.42);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:.78rem;padding:.32rem .7rem;border-radius:6px;font-weight:500}
+.popular a:hover{background:rgba(15,20,45,.62)}
+/* trust bar */
+.trustwrap{position:relative;z-index:5;margin-top:-52px}
+.trust{background:#fff;border-radius:14px;box-shadow:var(--sh);margin:0 auto;max-width:940px;display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;padding:1.1rem 1.2rem}
+.trust .t{display:flex;align-items:center;gap:.7rem}
+.trust .ci{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;flex:none}
+.trust .t b{display:block;font-size:.9rem;color:var(--navy);font-weight:600}
+.trust .t small{color:var(--muted);font-size:.78rem}
+@media(max-width:820px){.trust{grid-template-columns:1fr 1fr;gap:1rem}}
+@media(max-width:760px){.search{grid-template-columns:1fr}.search .f+.f{border-left:0;border-top:1px solid var(--border)}}
+
+/* Categories */
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
+.catcard{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.3rem 1rem;text-align:center;box-shadow:var(--sh-sm);transition:transform .12s,box-shadow .2s}
+.catcard:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.catcard .ci{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;margin:0 auto .8rem}
+.catcard b{display:flex;align-items:center;justify-content:center;min-height:2.5em;font-size:.92rem;color:var(--navy);font-weight:600}
+.catcard small{color:var(--muted);font-size:.8rem;margin-top:.2rem;display:block}
+@media(max-width:960px){.cats{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.cats{grid-template-columns:repeat(2,1fr)}}
+
+/* Featured */
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.bcard{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--sh-sm);transition:transform .12s,box-shadow .2s}
+.bcard:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.bcard .ph{position:relative;aspect-ratio:16/11;overflow:hidden}
+.bcard .ph img{width:100%;height:100%;object-fit:cover}
+.bcard .vf{position:absolute;top:.6rem;left:.6rem;background:#1faa5f;color:#fff;font-size:.68rem;font-weight:600;padding:.24rem .55rem;border-radius:6px;display:inline-flex;align-items:center;gap:.25rem}
+.bcard .fav{position:absolute;top:.55rem;right:.55rem;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;color:#42506e}
+.bcard .fav:hover{color:#e05c94}
+.bcard .bd{padding:.85rem .95rem 1rem}
+.bcard h3{font-size:1rem;font-weight:600;color:var(--navy)}
+.bcard .meta{color:var(--muted);font-size:.8rem;margin-top:.2rem}
+.bcard .row{display:flex;align-items:center;gap:.5rem;margin-top:.6rem;flex-wrap:wrap;font-size:.8rem}
+.bcard .rate{display:inline-flex;align-items:center;gap:.25rem;color:#42506e;font-weight:600}
+.bcard .rate .s{color:var(--yellow);display:inline-flex}
+.bcard .rate span{color:var(--muted);font-weight:500}
+.bcard .open{color:#1faa5f;font-weight:600}
+.bcard .close{color:var(--muted)}
+.dots{display:flex;gap:.4rem;justify-content:center;margin-top:1.2rem}
+.dots i{width:8px;height:8px;border-radius:50%;background:#cdd6e6;display:block}
+.dots i.on{width:22px;border-radius:6px;background:var(--blue)}
+@media(max-width:960px){.feat{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.feat{grid-template-columns:1fr}}
+
+/* CTA banner */
+.cta{position:relative;border-radius:18px;overflow:hidden;isolation:isolate;color:#fff}
+.cta::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,#1b3a8f 0%,#3b2f8f 55%,#6a2fa0 100%)}
+.cta .in{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;padding:clamp(1.6rem,3.5vw,2.4rem) clamp(1.6rem,4vw,2.6rem)}
+.cta .church{position:absolute;left:0;bottom:0;top:0;width:230px;opacity:.22;color:#fff;z-index:-1}
+.cta h2{color:#fff;font-size:clamp(1.3rem,2.6vw,1.8rem)}
+.cta p{color:rgba(255,255,255,.86);max-width:44ch;margin-top:.4rem;font-size:.92rem}
+.cta .content{position:relative;z-index:1;max-width:60%}
+.cta .act{position:relative;z-index:1;display:flex;align-items:center;gap:.6rem}
+.cta .doodle{opacity:.5}
+@media(max-width:700px){.cta .content{max-width:100%}}
+
+/* Stats */
+.stats{background:var(--soft);border:1px solid var(--border);border-radius:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding:1.6rem 1.2rem}
+.stat{display:flex;align-items:center;gap:.8rem;justify-content:center}
+.stat .si{width:48px;height:48px;border-radius:12px;background:#e7effc;color:var(--blue);display:grid;place-items:center;flex:none}
+.stat b{font-size:1.5rem;font-weight:800;color:var(--navy);line-height:1}
+.stat small{color:var(--muted);font-size:.82rem}
+.stat+.stat{border-left:1px solid var(--border)}
+@media(max-width:820px){.stats{grid-template-columns:1fr 1fr}.stat+.stat{border-left:0}}
+
+/* Why choose */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.why .w{display:flex;flex-direction:column;gap:.5rem}
+.why .wi{width:52px;height:52px;border-radius:14px;display:grid;place-items:center}
+.why h4{font-size:1rem;font-weight:600;color:var(--navy)}
+.why p{color:var(--muted);font-size:.86rem}
+@media(max-width:820px){.why{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.why{grid-template-columns:1fr}}
+
+/* Footer */
+.foot{position:relative;background:#0f2247;color:#c6d0e4;margin-top:2.5rem}
+.foot .wave{position:absolute;top:-1px;left:0;right:0;transform:translateY(-99%);line-height:0;color:#0f2247}
+.foot .top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.4fr;gap:2rem;padding-block:clamp(36px,5vw,56px)}
+.foot .brand-blk h3{font-family:"Caveat",cursive;color:#fff;font-size:2rem;line-height:1.05;font-weight:700}
+.foot .brand-blk h3 .y{color:var(--yellow)}
+.foot .brand-blk p{color:#9fb0cc;margin-top:.8rem;font-size:.86rem;max-width:32ch}
+.foot .soc{display:flex;gap:.5rem;margin-top:1rem}
+.foot .soc a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.09);display:grid;place-items:center;color:#fff}
+.foot .soc a:hover{background:var(--blue)}
+.foot h4{color:#fff;font-size:.95rem;margin-bottom:.9rem;font-weight:600}
+.foot .col a{display:block;color:#9fb0cc;padding:.3rem 0;font-size:.88rem}
+.foot .col a:hover{color:#fff}
+.foot .news p{color:#9fb0cc;font-size:.86rem;margin-bottom:.8rem}
+.foot .news .box{display:flex;gap:.4rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:.35rem .35rem .35rem .8rem}
+.foot .news input{flex:1;background:transparent;border:0;outline:0;color:#fff;font:inherit;font-size:.86rem}
+.foot .news input::placeholder{color:#8ea0bd}
+.foot .news .sbtn{width:40px;height:38px;border-radius:8px;background:var(--blue);color:#fff;display:grid;place-items:center;flex:none}
+.foot .city{position:relative;line-height:0}
+.foot .bot{border-top:1px solid rgba(255,255,255,.1);padding-block:1.1rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.84rem;color:#8ea0bd}
+.foot .bot .heart{color:#ff5a6e}
+@media(max-width:900px){.foot .top{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<header class="hd"><div class="wrap">
+  <a class="logo" href="https://www.goadirectory.in/" aria-label="Goa Directory">
+    <svg width="34" height="34" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 6c-6 0-10 4-11 8 3-2 6-2 8-1-4 1-7 4-8 9 3-3 6-4 9-3-3 2-5 6-5 11h4c0-9 3-16 9-20-5 1-9 4-11 8" fill="#1f5fd0"/><path d="M24 6c5 0 9 3 11 7-3-2-6-2-8-1 4 1 7 4 8 8-3-2-6-3-9-2 3 2 5 5 5 9" stroke="#16a89a" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="22" y="24" width="4" height="16" rx="1" fill="#7a5a3a"/></svg>
+    <span class="txt"><b>Goa<span>Directory</span></b><small>LOCAL CLASSIFIEDS</small></span>
+  </a>
+  <nav class="main" aria-label="Primary"><a href="https://www.goadirectory.in/" class="active">Home</a><a href="https://www.goadirectory.in/ads/">Businesses</a><a href="https://www.goadirectory.in/categories/">Categories</a><a href="https://www.goadirectory.in/blog/">Blog</a><a href="https://www.goadirectory.in/form/">Pay Now</a><a href="https://www.goadirectory.in/contact-us/">Contact</a></nav>
+  <div class="hd-act">
+    <a class="btn btn-blue" href="https://www.goadirectory.in/create-listing/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg> Post an Ad</a>
+    <a class="btn btn-white" href="https://www.goadirectory.in/login-2/?redirect_to=https%3A%2F%2Fwww.goadirectory.in%2F"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg> Login</a>
+  </div>
+</div></header>
+
+<section class="hero">
+  <div class="sky"></div><div class="sun"></div><div class="mtn"></div><div class="water"></div><div class="ov"></div>
+  <svg class="palm l" width="240" height="260" viewBox="0 0 240 260" fill="currentColor" aria-hidden="true"><rect x="150" y="120" width="10" height="140" transform="rotate(6 155 190)"/><path d="M155 120C120 96 78 92 40 104c34-2 66 6 92 26-30-30-74-42-116-36 40-8 84 2 120 30-24-34-64-52-108-52 44-6 92 12 124 48-14-40-52-70-98-78 50 2 100 34 116 84z"/></svg>
+  <svg class="palm r" width="240" height="260" viewBox="0 0 240 260" fill="currentColor" aria-hidden="true"><rect x="150" y="120" width="10" height="140" transform="rotate(6 155 190)"/><path d="M155 120C120 96 78 92 40 104c34-2 66 6 92 26-30-30-74-42-116-36 40-8 84 2 120 30-24-34-64-52-108-52 44-6 92 12 124 48-14-40-52-70-98-78 50 2 100 34 116 84z"/></svg>
+  <div class="wrap">
+    <h1>Discover. Connect. <span class="y">Grow.</span></h1>
+    <div class="sub">Goa's Trusted Local Classifieds</div>
+    <p class="lead">Find the best local businesses, shops, services and professionals across Goa.</p>
+    <form class="search" role="search" action="https://www.goadirectory.in/" method="get">
+      <div class="f"><span class="i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><span style="flex:1"><span class="lab">What are you looking for?</span><input type="search" name="s" placeholder="e.g. Restaurants, Salons, Electricians" aria-label="Search Goa Directory"></span></div>
+      <div class="f"><span class="i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span style="flex:1"><span class="lab">Location</span><span class="ex" style="display:block">All Goa</span></span></div>
+      <div class="go"><button class="btn btn-blue" type="submit">Search</button></div>
+    </form>
+    <div class="popular"><span class="l">Popular Searches:</span><a href="https://www.goadirectory.in/ad-category/restaurants-in-goa/">Restaurants</a><a href="https://www.goadirectory.in/ad-category/hotels-resorts/">Hotels &amp; Resorts</a><a href="https://www.goadirectory.in/ad-category/beauty-care/">Beauty &amp; Care</a><a href="https://www.goadirectory.in/ad-category/electronics-electrical-goods-mobile-shops-goa/">Electronics</a><a href="https://www.goadirectory.in/ad-category/automobiles/">Automobiles</a><a href="https://www.goadirectory.in/ad-category/tours-travels/">Tours &amp; Travels</a></div>
+    <div style="height:58px" aria-hidden="true"></div>
+  </div>
+</section>
+
+<div class="wrap trustwrap"><div class="trust">
+  <div class="t"><span class="ci" style="background:#1f5fd0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 4h12v16l-6-3-6 3z" fill="rgba(255,255,255,.25)"/><path d="M9 11l2 2 4-4"/></svg></span><span><b>Trusted Listings</b><small>Local businesses across Goa</small></span></div>
+  <div class="t"><span class="ci" style="background:#1faa5f"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5" fill="#fff"/></svg></span><span><b>North &amp; South Goa</b><small>Find businesses near you</small></span></div>
+  <div class="t"><span class="ci" style="background:#f0a020"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></span><span><b>Since 2014</b><small>Serving Goa for years</small></span></div>
+  <div class="t"><span class="ci" style="background:#7a4fd0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6M16 6l-4-4-4 4M12 2v13"/></svg></span><span><b>Post an Ad Free</b><small>List your business today</small></span></div>
+</div></div>
+
+<section class="sec" style="padding-top:36px"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">Browse Categories</span><h2 class="h2" style="margin-top:.3rem">Explore Top Categories</h2></div>
+    <a class="btn btn-white" href="https://www.goadirectory.in/categories/">View All Categories <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  <div class="cats"><a class="catcard" href="https://www.goadirectory.in/ad-category/electronics-electrical-goods-mobile-shops-goa/"><span class="ci" style="background:#dce8ff;color:#3b6fe0"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg></span><b>Electronics</b><small>9 Listings</small></a><a class="catcard" href="https://www.goadirectory.in/ad-category/automobiles/"><span class="ci" style="background:#ffe9d9;color:#f2793f"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11m-14 0h14m-14 0a2 2 0 0 0-2 2v3h2m14-5a2 2 0 0 1 2 2v3h-2M7 16h10"/></svg></span><b>Automobiles</b><small>8 Listings</small></a><a class="catcard" href="https://www.goadirectory.in/ad-category/interior-furniture-shops-companies/"><span class="ci" style="background:#d9f3e5;color:#1faa6b"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3m-16 0a2 2 0 0 0-2 2v3h2m14-5a2 2 0 0 1 2 2v3h-2M6 16h12"/></svg></span><b>Interior &amp; Furniture</b><small>8 Listings</small></a><a class="catcard" href="https://www.goadirectory.in/ad-category/restaurants-in-goa/"><span class="ci" style="background:#ffe0ec;color:#e05c94"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v7a3 3 0 0 0 6 0V3M7 3v18M17 3c-1.5 0-3 1.8-3 5s1.5 4 3 4v9"/></svg></span><b>Restaurants</b><small>6 Listings</small></a><a class="catcard" href="https://www.goadirectory.in/ad-category/garment-shops-in-goa/"><span class="ci" style="background:#ece0ff;color:#8b53d6"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7zM9 8V6a3 3 0 0 1 6 0v2"/></svg></span><b>Garment Shops</b><small>6 Listings</small></a><a class="catcard" href="https://www.goadirectory.in/ad-category/hotels-resorts/"><span class="ci" style="background:#d6f0f0;color:#17a2a2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7v11M3 12h18v6M21 12v-2a3 3 0 0 0-3-3H9v5"/></svg></span><b>Hotels &amp; Resorts</b><small>5 Listings</small></a><a class="catcard" href="https://www.goadirectory.in/ad-category/general-services/"><span class="ci" style="background:#fdeede;color:#e0912a"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 7a3 3 0 0 1 4 4l-8 8-4 1 1-4 7-7zM13 8l3 3"/></svg></span><b>General Services</b><small>5 Listings</small></a><a class="catcard" href="https://www.goadirectory.in/ad-category/jewellery-shops-goa/"><span class="ci" style="background:#e7effc;color:#1f5fd0"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l3 6-9 12L3 9l3-6zM3 9h18"/></svg></span><b>Jewellery Shops</b><small>4 Listings</small></a></div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><h2 class="h2">Featured Businesses</h2><a class="btn btn-white" href="https://www.goadirectory.in/ads/">View All Businesses <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  <div class="feat"><article class="bcard"><div class="ph"><a href="https://www.goadirectory.in/ads/s-nizami-interiors-interior-decorator-margao-goa/"><img src="https://picsum.photos/seed/nizami/440/320" alt="S Nizami Interiors, Margao, South Goa"></a><span class="vf">Featured</span><button class="fav" aria-label="Save S Nizami Interiors"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+      <div class="bd"><h3><a href="https://www.goadirectory.in/ads/s-nizami-interiors-interior-decorator-margao-goa/" style="color:inherit">S Nizami Interiors</a></h3><div class="meta">Interior &amp; Furniture · Margao, South Goa</div>
+        <div class="row"><a class="open" style="color:var(--blue);font-weight:600" href="https://www.goadirectory.in/ads/s-nizami-interiors-interior-decorator-margao-goa/">View Listing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></article><article class="bcard"><div class="ph"><a href="https://www.goadirectory.in/ads/verlekar-jewellers-vasco-da-gama-south-goa/"><img src="https://picsum.photos/seed/verlekar/440/320" alt="Verlekar Jewellers, Vasco-da-Gama"></a><span class="vf">Featured</span><button class="fav" aria-label="Save Verlekar Jewellers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+      <div class="bd"><h3><a href="https://www.goadirectory.in/ads/verlekar-jewellers-vasco-da-gama-south-goa/" style="color:inherit">Verlekar Jewellers</a></h3><div class="meta">Jewellery Shops · Vasco-da-Gama</div>
+        <div class="row"><a class="open" style="color:var(--blue);font-weight:600" href="https://www.goadirectory.in/ads/verlekar-jewellers-vasco-da-gama-south-goa/">View Listing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></article><article class="bcard"><div class="ph"><a href="https://www.goadirectory.in/ads/13-studio-unisex-salon-beauty-salon-goa/"><img src="https://picsum.photos/seed/studio13/440/320" alt="13 Studio Unisex Salon, Dabolim"></a><span class="vf">Featured</span><button class="fav" aria-label="Save 13 Studio Unisex Salon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+      <div class="bd"><h3><a href="https://www.goadirectory.in/ads/13-studio-unisex-salon-beauty-salon-goa/" style="color:inherit">13 Studio Unisex Salon</a></h3><div class="meta">Beauty &amp; Care · Dabolim</div>
+        <div class="row"><a class="open" style="color:var(--blue);font-weight:600" href="https://www.goadirectory.in/ads/13-studio-unisex-salon-beauty-salon-goa/">View Listing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></article><article class="bcard"><div class="ph"><a href="https://www.goadirectory.in/ads/mahalaxmi-electric-wholesale-electrical-shop-vasco-goa/"><img src="https://picsum.photos/seed/mahalaxmi/440/320" alt="Mahalaxmi Electric Co, Vasco-da-Gama"></a><span class="vf">Featured</span><button class="fav" aria-label="Save Mahalaxmi Electric Co"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+      <div class="bd"><h3><a href="https://www.goadirectory.in/ads/mahalaxmi-electric-wholesale-electrical-shop-vasco-goa/" style="color:inherit">Mahalaxmi Electric Co</a></h3><div class="meta">Electronics · Vasco-da-Gama</div>
+        <div class="row"><a class="open" style="color:var(--blue);font-weight:600" href="https://www.goadirectory.in/ads/mahalaxmi-electric-wholesale-electrical-shop-vasco-goa/">View Listing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></article></div>
+</div></section>
+
+<section class="cta-wrap sec" style="padding-top:0"><div class="wrap"><div class="cta">
+  <svg class="church" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M100 20v20M92 40h16M70 90h60v90H70zM70 90l30-24 30 24M85 110h12v18H85zM103 110h12v18h-12zM92 150h16v30H92z"/></svg>
+  <div class="in"><div class="content"><h2>Are you a Business Owner?</h2><p>List your business today and reach thousands of potential customers across Goa.</p></div>
+    <div class="act"><a class="btn btn-white" href="https://www.goadirectory.in/create-listing/" style="padding:.8rem 1.3rem;font-size:1rem">Post an Ad <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></a></div>
+  </div>
+</div></div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap"><div class="stats">
+  <div class="stat"><span class="si"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span><b>45+</b><br><small>Categories</small></span></div>
+  <div class="stat"><span class="si"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h3M8 11h3M8 15h3M14 7h2M14 11h2M14 15h2"/></svg></span><span><b>80+</b><br><small>Local Listings</small></span></div>
+  <div class="stat"><span class="si"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><span><b>10+</b><br><small>Years in Goa</small></span></div>
+  <div class="stat"><span class="si"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><b>2</b><br><small>Districts Covered</small></span></div>
+</div></div></section>
+
+<section class="sec" style="padding-top:1rem"><div class="wrap">
+  <h2 class="h2" style="text-align:center;margin-bottom:2rem">Why Choose Goa Directory?</h2>
+  <div class="why">
+    <div class="w"><span class="wi" style="background:#e7effc;color:#1f5fd0"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h4>Trusted &amp; Local</h4><p>A dedicated directory for businesses across Goa.</p></div>
+    <div class="w"><span class="wi" style="background:#e2f6ec;color:#1faa6b"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h16M6 19V11M11 19V7M16 19v-5M20 6l-5 3-4-3-5 4"/></svg></span><h4>Grow Your Business</h4><p>Increase visibility and attract more customers.</p></div>
+    <div class="w"><span class="wi" style="background:#fdeede;color:#f0a020"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v4h4l6 4V6l-6 4zM18 9a4 4 0 0 1 0 6"/></svg></span><h4>Easy to List</h4><p>Post an ad in minutes and reach local buyers.</p></div>
+    <div class="w"><span class="wi" style="background:#eee6fb;color:#7a4fd0"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="9" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M15 20c0-2 1.5-4 4-4"/></svg></span><h4>Local Community</h4><p>We support local businesses and the Goa community.</p></div>
+  </div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">Latest Listings</span><h2 class="h2" style="margin-top:.3rem">Newest on Goa Directory</h2></div><a class="btn btn-white" href="https://www.goadirectory.in/ads/">View More Ads <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  <div class="feat"><article class="bcard"><div class="ph"><a href="https://www.goadirectory.in/ads/property-civil-criminal-lawyer-in-sancoale-goa/"><img src="https://picsum.photos/seed/lawyer/440/320" alt="Property, Civil &amp; Criminal Lawyer, Sancoale"></a><button class="fav" aria-label="Save Property, Civil &amp; Criminal Lawyer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+      <div class="bd"><h3><a href="https://www.goadirectory.in/ads/property-civil-criminal-lawyer-in-sancoale-goa/" style="color:inherit">Property, Civil &amp; Criminal Lawyer</a></h3><div class="meta">Education · Sancoale</div>
+        <div class="row"><a class="open" style="color:var(--blue);font-weight:600" href="https://www.goadirectory.in/ads/property-civil-criminal-lawyer-in-sancoale-goa/">View Listing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></article><article class="bcard"><div class="ph"><a href="https://www.goadirectory.in/ads/mobile-repairing-store-vasco-goa/"><img src="https://picsum.photos/seed/saranya/440/320" alt="Saranya Mobile Repairing Store, Vasco-da-Gama"></a><button class="fav" aria-label="Save Saranya Mobile Repairing Store"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+      <div class="bd"><h3><a href="https://www.goadirectory.in/ads/mobile-repairing-store-vasco-goa/" style="color:inherit">Saranya Mobile Repairing Store</a></h3><div class="meta">Electronics · Vasco-da-Gama</div>
+        <div class="row"><a class="open" style="color:var(--blue);font-weight:600" href="https://www.goadirectory.in/ads/mobile-repairing-store-vasco-goa/">View Listing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></article><article class="bcard"><div class="ph"><a href="https://www.goadirectory.in/ads/self-drive-car-rental-near-dabolim-airport-goa/"><img src="https://picsum.photos/seed/royalcar/440/320" alt="Royal Car &amp; Bike Rental, Dabolim"></a><button class="fav" aria-label="Save Royal Car &amp; Bike Rental"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+      <div class="bd"><h3><a href="https://www.goadirectory.in/ads/self-drive-car-rental-near-dabolim-airport-goa/" style="color:inherit">Royal Car &amp; Bike Rental</a></h3><div class="meta">Tours &amp; Travels · Dabolim</div>
+        <div class="row"><a class="open" style="color:var(--blue);font-weight:600" href="https://www.goadirectory.in/ads/self-drive-car-rental-near-dabolim-airport-goa/">View Listing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></article><article class="bcard"><div class="ph"><a href="https://www.goadirectory.in/ads/a-one-flowers-florists-vasco-goa/"><img src="https://picsum.photos/seed/aoneflowers/440/320" alt="A One Flowers, Vasco-da-Gama"></a><button class="fav" aria-label="Save A One Flowers"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+      <div class="bd"><h3><a href="https://www.goadirectory.in/ads/a-one-flowers-florists-vasco-goa/" style="color:inherit">A One Flowers</a></h3><div class="meta">General Services · Vasco-da-Gama</div>
+        <div class="row"><a class="open" style="color:var(--blue);font-weight:600" href="https://www.goadirectory.in/ads/a-one-flowers-florists-vasco-goa/">View Listing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></article><article class="bcard"><div class="ph"><a href="https://www.goadirectory.in/ads/vasco-pest-control-vasco-da-gama-south-goa/"><img src="https://picsum.photos/seed/pest/440/320" alt="Vasco Pest Control, Vasco-da-Gama"></a><button class="fav" aria-label="Save Vasco Pest Control"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+      <div class="bd"><h3><a href="https://www.goadirectory.in/ads/vasco-pest-control-vasco-da-gama-south-goa/" style="color:inherit">Vasco Pest Control</a></h3><div class="meta">General Services · Vasco-da-Gama</div>
+        <div class="row"><a class="open" style="color:var(--blue);font-weight:600" href="https://www.goadirectory.in/ads/vasco-pest-control-vasco-da-gama-south-goa/">View Listing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></article><article class="bcard"><div class="ph"><a href="https://www.goadirectory.in/ads/rias-hair-beauty-salon-beauty-salon-goa/"><img src="https://picsum.photos/seed/rias/440/320" alt="Ria&#x27;s Hair &amp; Beauty Salon, Vasco-da-Gama"></a><button class="fav" aria-label="Save Ria&#x27;s Hair &amp; Beauty Salon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+      <div class="bd"><h3><a href="https://www.goadirectory.in/ads/rias-hair-beauty-salon-beauty-salon-goa/" style="color:inherit">Ria&#x27;s Hair &amp; Beauty Salon</a></h3><div class="meta">Beauty &amp; Care · Vasco-da-Gama</div>
+        <div class="row"><a class="open" style="color:var(--blue);font-weight:600" href="https://www.goadirectory.in/ads/rias-hair-beauty-salon-beauty-salon-goa/">View Listing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div></article></div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">From the Blog</span><h2 class="h2" style="margin-top:.3rem">Guides &amp; Articles</h2></div><a class="btn btn-white" href="https://www.goadirectory.in/blog/">View More Articles <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  <div class="feat" style="grid-template-columns:repeat(2,1fr);max-width:820px"><article class="bcard"><div class="ph"><a href="https://www.goadirectory.in/s-nizami-interior-the-best-pop-contractor-in-goa/"><img src="https://picsum.photos/seed/popblog/440/300" alt="S Nizami Interior: The Best POP Contractor in Goa"></a></div><div class="bd"><span class="vf" style="position:static;display:inline-flex;margin-bottom:.4rem;background:#eaf0fb;color:var(--blue)">Interiors</span><h3><a href="https://www.goadirectory.in/s-nizami-interior-the-best-pop-contractor-in-goa/" style="color:inherit">S Nizami Interior: The Best POP Contractor in Goa</a></h3><div class="row"><a class="open" style="color:var(--blue);font-weight:600" href="https://www.goadirectory.in/s-nizami-interior-the-best-pop-contractor-in-goa/">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></article><article class="bcard"><div class="ph"><a href="https://www.goadirectory.in/digital-marketing-agencies-goa-social-media-marketing-companies-in-goa/"><img src="https://picsum.photos/seed/dmblog/440/300" alt="Digital Marketing Agencies in Goa"></a></div><div class="bd"><span class="vf" style="position:static;display:inline-flex;margin-bottom:.4rem;background:#eaf0fb;color:var(--blue)">Marketing</span><h3><a href="https://www.goadirectory.in/digital-marketing-agencies-goa-social-media-marketing-companies-in-goa/" style="color:inherit">Digital Marketing Agencies in Goa</a></h3><div class="row"><a class="open" style="color:var(--blue);font-weight:600" href="https://www.goadirectory.in/digital-marketing-agencies-goa-social-media-marketing-companies-in-goa/">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></article></div>
+</div></section>
+
+<footer class="foot">
+  <div class="wave"><svg viewBox="0 0 1440 120" width="100%" height="120" preserveAspectRatio="none" fill="currentColor"><path d="M0 60c120-40 240-40 360-10s240 60 360 55 240-55 360-60 240 20 360 40v40H0z" opacity=".5"/><path d="M0 80c120-30 240-30 360-8s240 45 360 42 240-42 360-48 240 12 360 30v32H0z"/></svg></div>
+  <div class="wrap"><div class="top">
+    <div class="brand-blk">
+      <h3>Let's Build a<br><span class="y">Stronger Goa,</span> Together!</h3>
+      <p>Goa Directory is your trusted platform to discover, connect and grow with the best local businesses across Goa.</p>
+    </div>
+    <div class="col"><h4>Quick Links</h4><a href="https://www.goadirectory.in/">Home</a><a href="https://www.goadirectory.in/ads/">Businesses</a><a href="https://www.goadirectory.in/categories/">Categories</a><a href="https://www.goadirectory.in/blog/">Blog</a><a href="https://www.goadirectory.in/form/">Pay Now</a><a href="https://www.goadirectory.in/contact-us/">Contact Us</a></div>
+    <div class="col"><h4>For Businesses</h4><a href="https://www.goadirectory.in/create-listing/">Post an Ad</a><a href="https://www.goadirectory.in/login-2/?redirect_to=https%3A%2F%2Fwww.goadirectory.in%2F">Login</a><a href="https://www.goadirectory.in/form/">Pay Now</a><a href="https://www.goadirectory.in/faq-help/">FAQ / Help</a></div>
+    <div class="col"><h4>Resources</h4><a href="https://www.goadirectory.in/faq-help/">FAQ / Help</a><a href="https://www.goadirectory.in/privacy-policy/">Privacy Policy</a><a href="https://www.goadirectory.in/refund-policy/">Refund Policy</a><a href="https://www.goadirectory.in/terms-of-use/">Terms of Use</a><a href="https://www.goadirectory.in/contact-us/">Contact Us</a></div>
+    <div class="news"><h4>Get Listed</h4><p>List your business on Goa Directory and reach local customers today.</p>
+      <a class="btn btn-blue" href="https://www.goadirectory.in/create-listing/" style="width:100%">Post Your Ad <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div></div>
+  <div class="city"><svg viewBox="0 0 1440 160" width="100%" height="160" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="fsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e2044"/><stop offset="1" stop-color="#0a1830"/></linearGradient>
+      <radialGradient id="fglow" cx="50%" cy="6%" r="62%"><stop offset="0" stop-color="#2b4784" stop-opacity=".6"/><stop offset="1" stop-color="#2b4784" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect width="1440" height="160" fill="url(#fsky)"/>
+    <rect width="1440" height="160" fill="url(#fglow)"/>
+    <g fill="#9fb3de" opacity=".45"><circle cx="220" cy="30" r="1.4"/><circle cx="470" cy="20" r="1"/><circle cx="760" cy="26" r="1.5"/><circle cx="1010" cy="18" r="1.1"/><circle cx="1230" cy="34" r="1.3"/><circle cx="120" cy="46" r="1"/><circle cx="1350" cy="24" r="1.2"/></g>
+    <!-- back silhouette: side palms and houses, one soft hue -->
+    <g fill="#1c3466" opacity=".85">
+      <g><rect x="58" y="86" width="6" height="64"/><path d="M61 86c-16-9-31-6-42 3 12-5 24-5 34 1-12-2-24 2-33 10 14-7 28-7 40 1-9-13-2-25 1-29z"/></g>
+      <rect x="150" y="98" width="46" height="52"/><polygon points="150,98 173,82 196,98"/>
+      <rect x="205" y="90" width="42" height="60"/><polygon points="205,90 226,76 247,90"/>
+      <rect x="256" y="104" width="44" height="46"/><polygon points="256,104 278,90 300,104"/>
+      <rect x="1150" y="100" width="44" height="50"/><polygon points="1150,100 1172,84 1194,100"/>
+      <rect x="1202" y="90" width="44" height="60"/><polygon points="1202,90 1224,74 1246,90"/>
+      <rect x="1254" y="104" width="42" height="46"/><polygon points="1254,104 1275,90 1296,104"/>
+      <g><rect x="1378" y="82" width="6" height="68"/><path d="M1381 82c16-9 31-6 42 3-12-5-24-5-34 1 12-2 24 2 33 10-14-7-28-7-40 1 9-13 2-25-1-29z"/></g>
+    </g>
+    <!-- central palm tree (focal centrepiece) -->
+    <g fill="#2c4d8c">
+      <path d="M715 150c-3-30 0-53 9-74l7 2c-8 21-11 44-9 72z"/>
+      <g fill="none" stroke="#2c4d8c" stroke-width="7" stroke-linecap="round">
+        <path d="M727 78C705 64 685 62 668 68"/>
+        <path d="M727 78C709 58 698 44 692 28"/>
+        <path d="M727 78C749 64 769 62 786 68"/>
+        <path d="M727 78C745 58 756 44 762 28"/>
+        <path d="M727 78C725 54 728 38 733 24"/>
+        <path d="M727 78C701 76 684 82 672 92"/>
+        <path d="M727 78C753 76 770 82 782 92"/>
+      </g>
+      <circle cx="722" cy="80" r="3.4"/><circle cx="732" cy="82" r="3"/><circle cx="727" cy="76" r="2.6"/>
+    </g>
+    <!-- front ridge: darker, gentle wave, subtle horizon highlight (no yellow) -->
+    <path d="M0 150 Q360 120 720 132 T1440 150 V160 H0 Z" fill="#0a1730"/>
+    <path d="M0 150 Q360 120 720 132 T1440 150" fill="none" stroke="#5f7fbf" stroke-width="1.5" opacity=".35"/>
+  </svg></div>
+  <div class="wrap"><div class="bot"><span>© 2026 Goa Directory. All Rights Reserved.</span><span style="display:inline-flex;align-items:center;gap:.35rem">Made with <svg width="14" height="14" viewBox="0 0 24 24" fill="#ff5a6e" aria-label="love"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg> in Goa</span></div></div>
+</footer>
+
+</body>
+</html>
