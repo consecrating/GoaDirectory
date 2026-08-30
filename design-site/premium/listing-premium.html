@@ -1,0 +1,297 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Premium — Counto Motors listing preview</title>
+<meta name="description" content="Goa's trusted local directory — premium design preview.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}*{margin:0}
+:root{
+  --ink:#0f1729;--muted:#5b6472;--bg:#ffffff;--surface:#f7f9fb;--surface-2:#eef2f6;
+  --brand:#0e8f7e;--brand-d:#0a6d60;--accent:#ff5a3c;--gold:#f5b301;--border:#e5e9ef;
+  --radius:16px;--radius-sm:12px;--maxw:1200px;
+  --shadow-sm:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.06);
+  --shadow:0 10px 24px rgba(16,24,40,.08),0 4px 8px rgba(16,24,40,.04);
+  --shadow-lg:0 24px 48px rgba(16,24,40,.16);
+  --f-head:"Plus Jakarta Sans",system-ui,sans-serif;--f-body:"Inter",system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--f-body);color:var(--ink);background:var(--bg);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--f-head);line-height:1.12;font-weight:800;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+button{font:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:6px}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(18px,4vw,40px)}
+.section{padding-block:clamp(48px,7vw,88px)}
+.eyebrow{font-family:var(--f-head);font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brand)}
+.muted{color:var(--muted)}
+.head-2{font-size:clamp(1.7rem,3.4vw,2.4rem)}
+.lead{font-size:1.075rem;color:var(--muted);max-width:60ch}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:50px;padding:0 1.3rem;border-radius:999px;font-family:var(--f-head);font-weight:700;font-size:.98rem;transition:transform .1s,box-shadow .2s,background .2s,color .2s}
+.btn:active{transform:translateY(1px)}
+.btn-brand{background:var(--brand);color:#fff;box-shadow:0 8px 20px rgba(14,143,126,.28)}
+.btn-brand:hover{background:var(--brand-d)}
+.btn-accent{background:var(--accent);color:#fff;box-shadow:0 8px 20px rgba(255,90,60,.3)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--border)}
+.btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
+.btn-lg{min-height:58px;padding:0 1.7rem;font-size:1.05rem}
+.pill{display:inline-flex;align-items:center;gap:.45rem;padding:.4rem .85rem;border-radius:999px;background:#fff;border:1px solid var(--border);font-weight:600;font-size:.88rem;color:var(--ink)}
+.pill:hover{border-color:var(--brand);color:var(--brand)}
+.tag{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .6rem;border-radius:8px;font-family:var(--f-head);font-weight:700;font-size:.74rem;letter-spacing:.02em}
+.tag-cat{background:rgba(14,143,126,.12);color:var(--brand-d)}
+.tag-feat{background:var(--gold);color:#3a2c00}
+.tag-exp{background:rgba(255,90,60,.14);color:#c23c22}
+
+/* Header */
+header.hd{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:saturate(1.3) blur(10px);border-bottom:1px solid var(--border)}
+header.hd .wrap{display:flex;align-items:center;gap:1.4rem;min-height:74px}
+.brand{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--f-head);font-weight:800;font-size:1.2rem;letter-spacing:-.02em}
+.brand .m{width:34px;height:34px;border-radius:10px;background:var(--brand);color:#fff;display:grid;place-items:center;font-size:.95rem;box-shadow:0 6px 14px rgba(14,143,126,.35)}
+.nav{display:flex;gap:1.3rem;margin-left:.4rem}
+.nav a{color:var(--muted);font-weight:600;font-size:.96rem}.nav a:hover{color:var(--ink)}
+.hd-act{margin-left:auto;display:flex;align-items:center;gap:.6rem}
+.icobtn{width:46px;height:46px;border-radius:12px;border:1.5px solid var(--border);display:grid;place-items:center;color:var(--ink);background:#fff}
+@media(max-width:900px){.nav{display:none}}
+
+/* Hero */
+.hero{position:relative;color:#fff;isolation:isolate}
+.hero .bg{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center}
+.hero .ov{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(9,17,28,.55),rgba(9,17,28,.78))}
+.hero .wrap{padding-block:clamp(56px,9vw,120px);display:grid;gap:1.4rem;max-width:960px}
+.hero h1{font-size:clamp(2.2rem,5.4vw,4rem);color:#fff;max-width:18ch;text-shadow:0 2px 20px rgba(0,0,0,.25)}
+.hero p.sub{font-size:clamp(1.05rem,2vw,1.3rem);color:rgba(255,255,255,.9);max-width:52ch}
+.searchbox{background:rgba(255,255,255,.98);border-radius:20px;padding:.6rem;display:grid;grid-template-columns:1.5fr 1fr 1fr auto;gap:.4rem;box-shadow:var(--shadow-lg);max-width:900px}
+.searchbox .fld{display:flex;align-items:center;gap:.55rem;padding:.55rem .8rem;border-radius:14px}
+.searchbox .fld+.fld{border-left:1px solid var(--border)}
+.searchbox .fld .ico{color:var(--brand);flex:none}
+.searchbox .fld label{display:block;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.searchbox .fld input,.searchbox .fld select{border:0;outline:0;font:inherit;color:var(--ink);width:100%;background:transparent;font-weight:600}
+.searchbox .go{align-self:stretch}
+.searchbox .go button{height:100%;width:100%;border-radius:14px}
+.hero .tags{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.hero .tags .lbl{color:rgba(255,255,255,.75);font-size:.9rem;font-weight:600}
+.hero .tags a{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;padding:.4rem .8rem;border-radius:999px;font-size:.86rem;font-weight:600}
+.hero .tags a:hover{background:rgba(255,255,255,.24)}
+@media(max-width:760px){.searchbox{grid-template-columns:1fr}.searchbox .fld+.fld{border-left:0;border-top:1px solid var(--border)}}
+
+/* Category chips row */
+.catrow{display:grid;grid-template-columns:repeat(6,1fr);gap:.9rem}
+.catrow a{display:flex;flex-direction:column;align-items:center;gap:.6rem;text-align:center;padding:1.3rem .8rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius);transition:transform .12s,box-shadow .2s,border-color .2s}
+.catrow a:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
+.catrow .ci{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(14,143,126,.14),rgba(14,143,126,.06));color:var(--brand)}
+.catrow b{font-family:var(--f-head);font-size:.95rem}
+.catrow small{color:var(--muted);font-size:.82rem}
+@media(max-width:900px){.catrow{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.catrow{grid-template-columns:repeat(2,1fr)}}
+
+/* Listing cards */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+@media(max-width:900px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid-3{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .14s,box-shadow .22s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.card .ph{position:relative;aspect-ratio:16/11;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.card:hover .ph img{transform:scale(1.06)}
+.card .badges{position:absolute;top:.8rem;left:.8rem;display:flex;gap:.4rem}
+.card .fav{position:absolute;top:.7rem;right:.7rem;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;color:var(--ink)}
+.card .fav:hover{color:var(--accent)}
+.card .bd{padding:1.1rem 1.15rem 1.2rem;display:flex;flex-direction:column;gap:.55rem}
+.card .bd h3{font-size:1.12rem}
+.card .row{display:flex;align-items:center;gap:.4rem;color:var(--muted);font-size:.9rem}
+.card .rate{display:flex;align-items:center;gap:.3rem;font-size:.85rem;color:var(--muted)}
+.card .rate .st{color:var(--gold);display:inline-flex}
+.card .ft{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:.8rem;margin-top:.2rem}
+.card .ft .cta{color:var(--brand);font-weight:700;font-family:var(--f-head);display:inline-flex;align-items:center;gap:.35rem;font-size:.92rem}
+
+/* Areas */
+.areas{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:1rem}
+.areas a{position:relative;border-radius:var(--radius);overflow:hidden;min-height:180px;color:#fff;display:flex;align-items:end;isolation:isolate}
+.areas a.big{grid-row:1 / span 2}
+.areas a img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.areas a:hover img{transform:scale(1.06)}
+.areas a .g{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 30%,rgba(9,17,28,.82))}
+.areas a .t{padding:1.1rem}
+.areas a .t b{font-family:var(--f-head);font-size:1.3rem;display:block}
+.areas a .t small{color:rgba(255,255,255,.85)}
+@media(max-width:800px){.areas{grid-template-columns:1fr 1fr}.areas a.big{grid-row:auto;grid-column:1 / -1}}
+
+/* How it works */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.step{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem;display:flex;flex-direction:column;gap:.7rem}
+.step .n{width:48px;height:48px;border-radius:14px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:var(--f-head);font-weight:800}
+.step h3{font-size:1.2rem}
+@media(max-width:800px){.steps{grid-template-columns:1fr}}
+
+/* CTA banner */
+.cta{position:relative;border-radius:24px;overflow:hidden;color:#fff;isolation:isolate}
+.cta img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover}
+.cta .g{position:absolute;inset:0;z-index:-1;background:linear-gradient(120deg,rgba(14,143,126,.94),rgba(10,109,96,.86))}
+.cta .in{padding:clamp(2rem,5vw,3.5rem);display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.cta h2{color:#fff;font-size:clamp(1.6rem,3vw,2.3rem);max-width:20ch}
+
+/* Footer */
+footer.ft{background:#0b1420;color:#c7d0dc;margin-top:0}
+footer.ft .top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2rem;padding-block:clamp(40px,6vw,72px)}
+footer.ft h4{color:#fff;font-size:1rem;margin-bottom:1rem}
+footer.ft a{color:#c7d0dc;display:block;padding:.32rem 0}footer.ft a:hover{color:#fff}
+footer.ft .brand{color:#fff}
+footer.ft .bot{border-top:1px solid rgba(255,255,255,.1);padding-block:1.3rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.88rem;color:#8c99a8}
+@media(max-width:800px){footer.ft .top{grid-template-columns:1fr 1fr}}
+
+/* Listing detail */
+.crumbs{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center;color:var(--muted);font-size:.9rem}
+.crumbs a:hover{color:var(--brand)}.crumbs .s{opacity:.5}
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:.6rem;border-radius:var(--radius);overflow:hidden}
+.gal a{position:relative;overflow:hidden;background:var(--surface-2)}
+.gal a img{width:100%;height:100%;object-fit:cover;aspect-ratio:1;transition:transform .4s}
+.gal a:hover img{transform:scale(1.05)}
+.gal a.main{grid-row:1 / span 2;grid-column:1}
+.gal a.main img{aspect-ratio:16/11}
+.gal .more{position:absolute;inset:0;background:rgba(9,17,28,.62);color:#fff;display:grid;place-items:center;font-family:var(--f-head);font-weight:700}
+@media(max-width:700px){.gal{grid-template-columns:1fr 1fr}.gal a.main{grid-column:1 / -1;grid-row:auto}}
+.det{display:grid;grid-template-columns:1.7fr 1fr;gap:2rem;align-items:start;margin-top:1.6rem}
+@media(max-width:920px){.det{grid-template-columns:1fr}}
+.panel{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.3rem}
+.side{position:sticky;top:90px;display:grid;gap:1.2rem}
+.callbox{text-align:center;display:grid;gap:.7rem}
+.callbox .num{font-family:var(--f-head);font-weight:800;font-size:1.5rem;letter-spacing:-.01em}
+.infolist{list-style:none;padding:0;display:grid;gap:.9rem}
+.infolist li{display:flex;gap:.7rem;align-items:flex-start}
+.infolist .ico{color:var(--brand);flex:none;margin-top:.15rem}
+.infolist .k{font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
+.infolist .v{font-weight:600}
+.field{display:grid;gap:.35rem;margin-bottom:.8rem}
+.field label{font-size:.82rem;font-weight:600}
+.field input,.field textarea{border:1.5px solid var(--border);border-radius:12px;padding:.7rem .85rem;font:inherit}
+.chipset{display:flex;flex-wrap:wrap;gap:.5rem}
+.offer{display:flex;gap:.6rem;align-items:center;padding:.6rem 0}
+.offer .ck{width:26px;height:26px;border-radius:8px;background:rgba(14,143,126,.12);color:var(--brand);display:grid;place-items:center;flex:none}
+.map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);position:relative;min-height:260px;background:var(--surface-2);display:grid;place-items:center;text-align:center}
+.map .g{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:34px 34px;opacity:.7}
+.map .pin{position:relative;display:grid;gap:.5rem;justify-items:center;padding:1rem}
+.map .dot{width:22px;height:22px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 7px rgba(255,90,60,.22)}
+.notice{display:flex;gap:.6rem;align-items:flex-start;padding:.85rem 1rem;border-radius:12px;background:rgba(255,90,60,.09);border:1px solid rgba(255,90,60,.28);font-size:.94rem}
+.prose h2{font-size:1.4rem;margin:1.6rem 0 .6rem}.prose h2:first-child{margin-top:0}
+.prose p{margin-bottom:.9rem;color:#374151}
+.rev-empty{display:flex;gap:.8rem;align-items:center;padding:1.1rem;border:1px dashed var(--border);border-radius:var(--radius);background:var(--surface)}
+.pvbar{position:sticky;bottom:0;z-index:60;background:#0b1420;color:#fff;display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;padding:.7rem clamp(18px,4vw,40px);font-weight:600;font-size:.86rem;border-top:2px solid var(--accent)}
+.pvbar a{color:#8fe3d6}.pvbar a:hover{color:#fff}.pvbar .sp{margin-left:auto}
+.pvbar .t{background:var(--accent);color:#fff;padding:.2rem .55rem;border-radius:6px}
+</style></head><body>
+<header class="hd"><div class="wrap">
+<a class="brand" href="index-premium.html"><span class="m">GD</span>Goa Directory</a>
+<nav class="nav"><a href="#">Explore</a><a href="#">Categories</a><a href="#">Add Listing</a><a href="#">Areas</a><a href="#">Blog</a></nav>
+<div class="hd-act"><button class="icobtn" aria-label="Menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="btn btn-ghost" href="#">Log in</a>
+<a class="btn btn-accent" href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg> Post a Listing</a></div>
+</div></header>
+<main>
+<section style="background:var(--surface);border-bottom:1px solid var(--border)"><div class="wrap" style="padding-block:1rem">
+  <nav class="crumbs"><a href="../index.html">Home</a><span class="s">/</span><a href="https://www.goadirectory.in/ad-category/automobiles/">Automobiles</a><span class="s">/</span><span>Counto Motors</span></nav>
+</div></section>
+
+<section style="padding-top:1.4rem"><div class="wrap">
+  <div style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:start;margin-bottom:1.1rem">
+    <div style="display:grid;gap:.6rem">
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap"><span class="tag tag-cat">Automobiles</span><span class="tag tag-exp"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Expired listing</span></div>
+      <h1 style="font-size:clamp(1.6rem,3.3vw,2.5rem);max-width:24ch">Counto Motors Mercedes-Benz Dealership in Ribandar, Goa</h1>
+      <div style="display:flex;gap:1.1rem;flex-wrap:wrap;color:var(--muted)"><span style="display:inline-flex;gap:.4rem;align-items:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Mercedes Benz Showroom, Ribandar, Goa 403006</span><span class="rate"><span class="st"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9L12 3z"/></svg></span> New listing · No reviews yet</span></div>
+    </div>
+    <div style="display:flex;gap:.5rem"><button class="btn btn-ghost"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg> Save</button><button class="btn btn-ghost"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="18" cy="18" r="2.2"/><path d="M8 11l8-4M8 13l8 4"/></svg> Share</button></div>
+  </div>
+  <div id="gallery" class="gal"><a class="main" href="#gallery"><img src="https://www.goadirectory.in/wp-content/uploads/2016/04/Mercedes-Benz-GLS-350-d.jpg" alt="Mercedes-Benz car at Counto Motors, Ribandar Goa"></a><a href="#gallery"><img src="https://www.goadirectory.in/wp-content/uploads/2016/04/Mercedes-Benz-S-350-d.jpg" alt="Mercedes-Benz sedan at the Counto Motors showroom"></a><a href="#gallery"><img src="https://www.goadirectory.in/wp-content/uploads/2016/04/C-Class.jpg" alt="Mercedes-Benz model at Counto Motors Goa"></a><a href="#gallery"><img src="https://www.goadirectory.in/wp-content/uploads/2016/04/E-Class.jpg" alt="Mercedes-Benz model available in Goa"></a><a href="#gallery"><img src="https://www.goadirectory.in/wp-content/uploads/2016/04/CLS.jpg" alt="Mercedes-Benz at Counto Motors"><span class="more">+9 photos</span></a></div>
+
+  <div class="det">
+    <div style="display:grid;gap:1.6rem">
+      <div class="notice"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span><b>This listing has expired.</b> Details are shown as published — please call to confirm before visiting.</span></div>
+      <div class="panel prose">
+        <h2>About Counto Motors</h2><p>Counto Motors is described as the sister company of the Alcon Group and the only authorized Mercedes-Benz passenger vehicle dealership for Goa.</p><p>The showroom presents the Mercedes-Benz passenger car range and offers Star Ease service packages, helping owners manage the cost of ownership, servicing and the long-term health of their vehicle.</p>
+        <h2 style="margin-top:1.2rem">What they offer</h2><div class="offer"><span class="ck"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span><span>Authorized Mercedes-Benz passenger vehicles</span></div><div class="offer"><span class="ck"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span><span>Star Ease service packages</span></div><div class="offer"><span class="ck"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span><span>Test drive of the latest models</span></div><div class="offer"><span class="ck"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span><span>Sales and after-sales support</span></div>
+      </div>
+      <div class="panel">
+        <h2 style="font-size:1.3rem;margin-bottom:.9rem">Location</h2>
+        <div id="map" class="map"><div class="g"></div><div class="pin"><span class="dot"></span><b style="font-family:var(--f-head)">Ribandar, Goa 403006</b><button class="btn btn-ghost">Load interactive map</button></div></div>
+      </div>
+      <div class="panel">
+        <h2 style="font-size:1.3rem;margin-bottom:.9rem">Reviews</h2>
+        <div class="rev-empty"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9L12 3z"/></svg><div><b>No reviews yet</b><br><span class="muted">Be the first to review Counto Motors.</span></div></div>
+      </div>
+      <div><h2 class="head-2" style="font-size:1.5rem;margin-bottom:1rem">Related in Automobiles &amp; nearby</h2><div class="grid-3"><article class="card">
+<div class="ph"><a href="https://www.goadirectory.in/ads/self-drive-car-rental-near-dabolim-airport-goa/"><img src="https://picsum.photos/seed/royalcar/640/440" alt="Royal Car &amp; Bike Rental in Dabolim, Goa" loading="lazy"></a>
+<div class="badges"><span class="tag tag-cat">Tours &amp; Travels</span></div>
+<button class="fav" aria-label="Save Royal Car &amp; Bike Rental"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+<div class="bd">
+<h3><a href="https://www.goadirectory.in/ads/self-drive-car-rental-near-dabolim-airport-goa/">Royal Car &amp; Bike Rental</a></h3>
+<span class="row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Dabolim, Goa</span>
+<span class="rate"><span class="st"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9L12 3z"/></svg></span> New listing · No reviews yet</span>
+<div class="ft"><a class="cta" href="https://www.goadirectory.in/ads/self-drive-car-rental-near-dabolim-airport-goa/">View details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a class="row" href="https://www.goadirectory.in/ad-category/tours-travels/" style="font-size:.85rem">Tours &amp; Travels</a></div>
+</div></article><article class="card">
+<div class="ph"><a href="https://www.goadirectory.in/ads/mobile-repairing-store-vasco-goa/"><img src="https://picsum.photos/seed/saranya/640/440" alt="Saranya Mobile Repairing in Vasco-da-Gama, Goa" loading="lazy"></a>
+<div class="badges"><span class="tag tag-cat">Electronics</span></div>
+<button class="fav" aria-label="Save Saranya Mobile Repairing"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+<div class="bd">
+<h3><a href="https://www.goadirectory.in/ads/mobile-repairing-store-vasco-goa/">Saranya Mobile Repairing</a></h3>
+<span class="row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Vasco-da-Gama, Goa</span>
+<span class="rate"><span class="st"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9L12 3z"/></svg></span> New listing · No reviews yet</span>
+<div class="ft"><a class="cta" href="https://www.goadirectory.in/ads/mobile-repairing-store-vasco-goa/">View details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a class="row" href="https://www.goadirectory.in/ad-category/electronics-electrical-goods-mobile-shops-goa/" style="font-size:.85rem">Electronics</a></div>
+</div></article><article class="card">
+<div class="ph"><a href="https://www.goadirectory.in/ads/mahalaxmi-electric-wholesale-electrical-shop-vasco-goa/"><img src="https://picsum.photos/seed/mahalaxmi/640/440" alt="Mahalaxmi Electric Co in Vasco-da-Gama, Goa" loading="lazy"></a>
+<div class="badges"><span class="tag tag-cat">Electronics</span></div>
+<button class="fav" aria-label="Save Mahalaxmi Electric Co"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+<div class="bd">
+<h3><a href="https://www.goadirectory.in/ads/mahalaxmi-electric-wholesale-electrical-shop-vasco-goa/">Mahalaxmi Electric Co</a></h3>
+<span class="row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Vasco-da-Gama, Goa</span>
+<span class="rate"><span class="st"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9L12 3z"/></svg></span> New listing · No reviews yet</span>
+<div class="ft"><a class="cta" href="https://www.goadirectory.in/ads/mahalaxmi-electric-wholesale-electrical-shop-vasco-goa/">View details <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a class="row" href="https://www.goadirectory.in/ad-category/electronics-electrical-goods-mobile-shops-goa/" style="font-size:.85rem">Electronics</a></div>
+</div></article></div></div>
+    </div>
+
+    <aside class="side">
+      <div class="panel callbox">
+        <img src="https://www.goadirectory.in/wp-content/uploads/2016/04/Mercedes-Benz-Logo-500x404.png" alt="Mercedes-Benz logo" width="120" style="width:120px;height:auto;margin:0 auto .3rem">
+        <div class="k" style="font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700">Call the dealership</div>
+        <div class="num">8308-10-5556</div>
+        <a class="btn btn-brand btn-lg btn-block" style="width:100%" href="tel:8308105556"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5c0 8 7 15 15 15l1-4-5-2-2 2a12 12 0 0 1-5-5l2-2-2-5-4 1z"/></svg> Call now</a>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem"><a class="btn btn-ghost" href="#map"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l10 10-10 10L2 12 12 2zM12 8v4h4"/></svg> Directions</a><a class="btn btn-ghost" href="#enq"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> Enquire</a></div>
+      </div>
+      <div class="panel">
+        <h3 style="font-size:1.05rem;margin-bottom:.9rem">Business details</h3>
+        <ul class="infolist">
+          <li><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z"/></svg></span><span><span class="k">Category</span><br><a class="v" href="https://www.goadirectory.in/ad-category/automobiles/" style="color:var(--brand)">Automobiles</a></span></li>
+          <li><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><span class="k">Address</span><br><span class="v">Mercedes Benz Showroom, Ribandar, Goa 403006</span></span></li>
+          <li><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><span><span class="k">Listed by</span><br><span class="v">Liya · member since April 5, 2016</span></span></li>
+          <li><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></span><span><span class="k">Published</span><br><span class="v">April 13, 2016</span></span></li>
+          <li><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><span><span class="k">Status</span><br><span class="v">Expired — verify before visiting</span></span></li>
+        </ul>
+      </div>
+      <div class="panel" id="enq">
+        <h3 style="font-size:1.05rem;margin-bottom:.9rem">Contact this business</h3>
+        <form onsubmit="return false">
+          <div class="field"><label>Your name</label><input type="text" placeholder="Full name"></div>
+          <div class="field"><label>Phone or email</label><input type="text" placeholder="How they can reach you"></div>
+          <div class="field"><label>Message</label><textarea rows="3" placeholder="I'm interested in..."></textarea></div>
+          <button class="btn btn-accent btn-block" style="width:100%" type="submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> Send enquiry</button>
+        </form>
+      </div>
+    </aside>
+  </div>
+</div></section>
+</main>
+<footer class="ft"><div class="wrap">
+<div class="top">
+<div><a class="brand" href="#" style="font-size:1.3rem"><span class="m">GD</span>Goa Directory</a>
+<p style="margin-top:1rem;max-width:34ch;color:#8c99a8">Goa's trusted local classifieds — discover shops, services and places across the state.</p></div>
+<div><h4>Explore</h4><a href="#">Browse categories</a><a href="#">Latest listings</a><a href="#">Featured businesses</a><a href="#">Local guides</a></div><div><h4>Company</h4><a href="#">About us</a><a href="#">Contact</a><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div><div><h4>Support</h4><a href="#">FAQ / Help</a><a href="#">Refund Policy</a><a href="#">Post an ad</a><a href="#">Pay now</a></div>
+</div>
+<div class="bot"><span>© 2026 Goa Directory. All rights reserved.</span><span>Made in Goa</span></div>
+</div></footer>
+<div class="pvbar"><span class="t">Premium</span> <strong>ThemeForest-grade preview</strong> · listing page
+<a href="index-premium.html">View homepage →</a><span class="sp"></span>
+<a href="../index.html">All previews</a></div>
+</body></html>
