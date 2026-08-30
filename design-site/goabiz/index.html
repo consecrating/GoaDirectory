@@ -82,7 +82,8 @@ nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px
 .popular a{background:rgba(15,20,45,.42);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:.78rem;padding:.32rem .7rem;border-radius:6px;font-weight:500}
 .popular a:hover{background:rgba(15,20,45,.62)}
 /* trust bar */
-.trust{background:#fff;border-radius:14px;box-shadow:var(--sh);margin:1.6rem auto -34px;max-width:940px;display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;padding:1.1rem 1.2rem;position:relative;z-index:2}
+.trustwrap{position:relative;z-index:5;margin-top:-52px}
+.trust{background:#fff;border-radius:14px;box-shadow:var(--sh);margin:0 auto;max-width:940px;display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;padding:1.1rem 1.2rem}
 .trust .t{display:flex;align-items:center;gap:.7rem}
 .trust .ci{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;flex:none}
 .trust .t b{display:block;font-size:.9rem;color:var(--navy);font-weight:600}
@@ -95,7 +96,7 @@ nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px
 .catcard{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.3rem 1rem;text-align:center;box-shadow:var(--sh-sm);transition:transform .12s,box-shadow .2s}
 .catcard:hover{transform:translateY(-4px);box-shadow:var(--sh)}
 .catcard .ci{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;margin:0 auto .8rem}
-.catcard b{display:block;font-size:.92rem;color:var(--navy);font-weight:600}
+.catcard b{display:flex;align-items:center;justify-content:center;min-height:2.5em;font-size:.92rem;color:var(--navy);font-weight:600}
 .catcard small{color:var(--muted);font-size:.8rem;margin-top:.2rem;display:block}
 @media(max-width:960px){.cats{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:520px){.cats{grid-template-columns:repeat(2,1fr)}}
@@ -236,17 +237,18 @@ nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px
       <a href="#">Restaurants</a><a href="#">Hotels</a><a href="#">Salons</a><a href="#">Electricians</a><a href="#">Plumbers</a><a href="#">Tour &amp; Travels</a>
     </div>
 
-    <div class="trust">
-      <div class="t"><span class="ci" style="background:#1f5fd0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 4h12v16l-6-3-6 3z" fill="rgba(255,255,255,.25)"/><path d="M9 11l2 2 4-4"/></svg></span><span><b>Verified Businesses</b><small>100% Verified &amp; Trusted</small></span></div>
-      <div class="t"><span class="ci" style="background:#1faa5f"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5" fill="#fff"/></svg></span><span><b>Local &amp; Reliable</b><small>Businesses Near You</small></span></div>
-      <div class="t"><span class="ci" style="background:#f0a020"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-8-8V4h8z"/><circle cx="9" cy="8" r="1.3" fill="#fff"/></svg></span><span><b>Best Deals</b><small>Exclusive Offers</small></span></div>
-      <div class="t"><span class="ci" style="background:#7a4fd0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 12a8 8 0 0 1 16 0v4a3 3 0 0 1-3 3h-2v-6h5M4 12v4a3 3 0 0 0 3 3h0v-6H4"/></svg></span><span><b>24/7 Support</b><small>We're Here to Help</small></span></div>
-    </div>
   </div>
 </section>
 
+<div class="wrap trustwrap"><div class="trust">
+  <div class="t"><span class="ci" style="background:#1f5fd0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 4h12v16l-6-3-6 3z" fill="rgba(255,255,255,.25)"/><path d="M9 11l2 2 4-4"/></svg></span><span><b>Verified Businesses</b><small>100% Verified &amp; Trusted</small></span></div>
+  <div class="t"><span class="ci" style="background:#1faa5f"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5" fill="#fff"/></svg></span><span><b>Local &amp; Reliable</b><small>Businesses Near You</small></span></div>
+  <div class="t"><span class="ci" style="background:#f0a020"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-8-8V4h8z"/><circle cx="9" cy="8" r="1.3" fill="#fff"/></svg></span><span><b>Best Deals</b><small>Exclusive Offers</small></span></div>
+  <div class="t"><span class="ci" style="background:#7a4fd0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 12a8 8 0 0 1 16 0v4a3 3 0 0 1-3 3h-2v-6h5M4 12v4a3 3 0 0 0 3 3h0v-6H4"/></svg></span><span><b>24/7 Support</b><small>We're Here to Help</small></span></div>
+</div></div>
+
 <!-- ===== Categories ===== -->
-<section class="sec" style="padding-top:64px"><div class="wrap">
+<section class="sec" style="padding-top:36px"><div class="wrap">
   <div class="sec-head">
     <div><span class="eyebrow">Browse Categories</span><h2 class="h2" style="margin-top:.3rem">Explore Top Categories</h2></div>
     <a class="btn btn-white" href="#">View All Categories
