@@ -708,6 +708,10 @@ def render_index() -> str:
   <span class="eyebrow" style="color:#ffd7cb">Design exploration</span>
   <h1 style="color:#fff;font-size:clamp(2rem,5vw,3.2rem);max-width:20ch">10 coded homepage &amp; listing directions for GoaDirectory</h1>
   <p style="color:rgba(255,255,255,.85);max-width:70ch">Real, responsive HTML and CSS you can open and click. Each direction includes a homepage and a matching Counto Motors listing page, built with the actual site content. Pick a number and I will refine it into production.</p>
+  <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem">
+    <a class="btn btn-accent" href="premium/index-premium.html">★ Premium direction — Homepage</a>
+    <a class="btn btn-ghost" href="premium/listing-premium.html" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.4)">Premium direction — Listing</a>
+  </div>
 </div></section>
 <section class="section"><div class="wrap"><div class="idx-grid">{"".join(cards)}</div></div></section>
 {footer()}
