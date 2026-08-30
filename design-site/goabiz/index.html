@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GoaBiz Directory — Goa's Most Trusted Business Directory</title>
+<meta name="description" content="Discover, connect and grow with the best local businesses, services and professionals across Goa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}*{margin:0}
+:root{
+  --navy:#16244a;--navy-2:#1b2c53;--blue:#1f5fd0;--blue-d:#1a52b8;
+  --ink:#2b3550;--muted:#7a8399;--yellow:#f6b71e;--bg:#ffffff;--soft:#f5f8fd;
+  --border:#e9edf4;--radius:16px;
+  --sh-sm:0 1px 2px rgba(20,35,80,.06),0 6px 16px rgba(20,35,80,.05);
+  --sh:0 14px 34px rgba(20,35,80,.10);
+  --f:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--f);color:var(--ink);background:var(--bg);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--f);line-height:1.18;font-weight:700;color:var(--navy);letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:6px}
+.wrap{width:100%;max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,3.5vw,28px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:10px;font-weight:600;font-size:.92rem;padding:.7rem 1.15rem;transition:transform .1s,box-shadow .2s,background .2s}
+.btn:active{transform:translateY(1px)}
+.btn-blue{background:var(--blue);color:#fff;box-shadow:0 8px 18px rgba(31,95,208,.28)}
+.btn-blue:hover{background:var(--blue-d)}
+.btn-white{background:#fff;color:var(--navy);border:1.5px solid #e2e7f0}
+.btn-white:hover{border-color:var(--blue);color:var(--blue)}
+.eyebrow{font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.sec{padding-block:clamp(34px,4.5vw,54px)}
+.sec-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.h2{font-size:clamp(1.5rem,2.6vw,1.9rem);font-weight:700}
+
+/* Header */
+header.hd{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--border)}
+header.hd .wrap{display:flex;align-items:center;gap:1.2rem;min-height:66px}
+.logo{display:flex;align-items:center;gap:.5rem}
+.logo .txt b{font-size:1.28rem;font-weight:800;color:var(--navy);line-height:1;letter-spacing:-.02em}
+.logo .txt b span{color:var(--blue)}
+.logo .txt small{display:block;font-size:.58rem;letter-spacing:.34em;color:var(--blue);font-weight:600;margin-top:2px}
+nav.main{display:flex;gap:1.35rem;margin:0 auto}
+nav.main a{color:#42506e;font-weight:500;font-size:.92rem;padding:.4rem 0;position:relative}
+nav.main a:hover{color:var(--blue)}
+nav.main a.active{color:var(--blue);font-weight:600}
+nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--blue);border-radius:2px}
+.hd-act{display:flex;align-items:center;gap:.6rem}
+@media(max-width:900px){nav.main{display:none}}
+
+/* Hero */
+.hero{position:relative;isolation:isolate;color:#fff;overflow:hidden}
+.hero .sky{position:absolute;inset:0;z-index:-3;background:linear-gradient(180deg,#3a2b6d 0%,#6b3f83 34%,#b5567a 60%,#e88a54 82%,#f2b06b 100%)}
+.hero .sun{position:absolute;z-index:-3;width:220px;height:220px;border-radius:50%;left:64%;top:34%;background:radial-gradient(circle,#ffd9a0,rgba(255,201,120,.35) 55%,transparent 70%);filter:blur(2px)}
+.hero .mtn{position:absolute;left:0;right:0;bottom:0;z-index:-2;height:180px;background:
+  radial-gradient(120% 100% at 20% 100%,#2b2540 40%,transparent 41%),
+  radial-gradient(120% 100% at 70% 100%,#39273f 40%,transparent 41%);opacity:.55}
+.hero .water{position:absolute;left:0;right:0;bottom:0;z-index:-2;height:70px;background:linear-gradient(180deg,rgba(255,190,140,.35),rgba(120,80,110,.5))}
+.hero .ov{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(26,20,45,.35),rgba(26,20,45,.15) 40%,rgba(26,20,45,.35))}
+.hero .palm{position:absolute;bottom:-6px;z-index:-1;color:#171226;opacity:.92}
+.hero .palm.l{left:-10px}.hero .palm.r{right:-10px;transform:scaleX(-1)}
+.hero .wrap{padding-top:clamp(46px,7vw,84px);padding-bottom:0;text-align:center;position:relative}
+.hero h1{color:#fff;font-weight:800;font-size:clamp(2.2rem,5vw,3.5rem);letter-spacing:-.02em;text-shadow:0 3px 22px rgba(0,0,0,.28)}
+.hero h1 .y{color:var(--yellow)}
+.hero .sub{font-weight:700;font-size:clamp(1.05rem,2.2vw,1.5rem);margin-top:.5rem;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.3)}
+.hero .lead{color:rgba(255,255,255,.92);margin-top:.5rem;font-size:1rem;text-shadow:0 1px 10px rgba(0,0,0,.3)}
+/* search card */
+.search{background:#fff;border-radius:14px;box-shadow:0 20px 50px rgba(15,20,50,.28);padding:.5rem;display:grid;grid-template-columns:1.6fr 1fr auto;gap:.4rem;max-width:760px;margin:1.7rem auto 0;text-align:left}
+.search .f{display:flex;align-items:center;gap:.6rem;padding:.55rem .8rem}
+.search .f+.f{border-left:1px solid var(--border)}
+.search .f .i{color:var(--blue);flex:none}
+.search .f .lab{font-size:.85rem;font-weight:600;color:var(--navy);line-height:1.1}
+.search .f .ex{font-size:.76rem;color:#9aa3b5}
+.search .f input{border:0;outline:0;font:inherit;width:100%;color:var(--navy);background:transparent}
+.search .go{display:flex;align-items:center}
+.search .go .btn{height:100%;padding-inline:1.6rem}
+/* popular */
+.popular{display:flex;gap:.5rem;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:.9rem}
+.popular .l{font-size:.82rem;font-weight:600;color:#fff}
+.popular a{background:rgba(15,20,45,.42);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:.78rem;padding:.32rem .7rem;border-radius:6px;font-weight:500}
+.popular a:hover{background:rgba(15,20,45,.62)}
+/* trust bar */
+.trust{background:#fff;border-radius:14px;box-shadow:var(--sh);margin:1.6rem auto -34px;max-width:940px;display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;padding:1.1rem 1.2rem;position:relative;z-index:2}
+.trust .t{display:flex;align-items:center;gap:.7rem}
+.trust .ci{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;flex:none}
+.trust .t b{display:block;font-size:.9rem;color:var(--navy);font-weight:600}
+.trust .t small{color:var(--muted);font-size:.78rem}
+@media(max-width:820px){.trust{grid-template-columns:1fr 1fr;gap:1rem}}
+@media(max-width:760px){.search{grid-template-columns:1fr}.search .f+.f{border-left:0;border-top:1px solid var(--border)}}
+
+/* Categories */
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
+.catcard{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.3rem 1rem;text-align:center;box-shadow:var(--sh-sm);transition:transform .12s,box-shadow .2s}
+.catcard:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.catcard .ci{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;margin:0 auto .8rem}
+.catcard b{display:block;font-size:.92rem;color:var(--navy);font-weight:600}
+.catcard small{color:var(--muted);font-size:.8rem;margin-top:.2rem;display:block}
+@media(max-width:960px){.cats{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.cats{grid-template-columns:repeat(2,1fr)}}
+
+/* Featured */
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.bcard{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--sh-sm);transition:transform .12s,box-shadow .2s}
+.bcard:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.bcard .ph{position:relative;aspect-ratio:16/11;overflow:hidden}
+.bcard .ph img{width:100%;height:100%;object-fit:cover}
+.bcard .vf{position:absolute;top:.6rem;left:.6rem;background:#1faa5f;color:#fff;font-size:.68rem;font-weight:600;padding:.24rem .55rem;border-radius:6px;display:inline-flex;align-items:center;gap:.25rem}
+.bcard .fav{position:absolute;top:.55rem;right:.55rem;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;color:#42506e}
+.bcard .fav:hover{color:#e05c94}
+.bcard .bd{padding:.85rem .95rem 1rem}
+.bcard h3{font-size:1rem;font-weight:600;color:var(--navy)}
+.bcard .meta{color:var(--muted);font-size:.8rem;margin-top:.2rem}
+.bcard .row{display:flex;align-items:center;gap:.5rem;margin-top:.6rem;flex-wrap:wrap;font-size:.8rem}
+.bcard .rate{display:inline-flex;align-items:center;gap:.25rem;color:#42506e;font-weight:600}
+.bcard .rate .s{color:var(--yellow);display:inline-flex}
+.bcard .rate span{color:var(--muted);font-weight:500}
+.bcard .open{color:#1faa5f;font-weight:600}
+.bcard .close{color:var(--muted)}
+.dots{display:flex;gap:.4rem;justify-content:center;margin-top:1.2rem}
+.dots i{width:8px;height:8px;border-radius:50%;background:#cdd6e6;display:block}
+.dots i.on{width:22px;border-radius:6px;background:var(--blue)}
+@media(max-width:960px){.feat{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.feat{grid-template-columns:1fr}}
+
+/* CTA banner */
+.cta{position:relative;border-radius:18px;overflow:hidden;isolation:isolate;color:#fff}
+.cta::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,#1b3a8f 0%,#3b2f8f 55%,#6a2fa0 100%)}
+.cta .in{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;padding:clamp(1.6rem,3.5vw,2.4rem) clamp(1.6rem,4vw,2.6rem)}
+.cta .church{position:absolute;left:0;bottom:0;top:0;width:230px;opacity:.22;color:#fff;z-index:-1}
+.cta h2{color:#fff;font-size:clamp(1.3rem,2.6vw,1.8rem)}
+.cta p{color:rgba(255,255,255,.86);max-width:44ch;margin-top:.4rem;font-size:.92rem}
+.cta .content{position:relative;z-index:1;max-width:60%}
+.cta .act{position:relative;z-index:1;display:flex;align-items:center;gap:.6rem}
+.cta .doodle{opacity:.5}
+@media(max-width:700px){.cta .content{max-width:100%}}
+
+/* Stats */
+.stats{background:var(--soft);border:1px solid var(--border);border-radius:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding:1.6rem 1.2rem}
+.stat{display:flex;align-items:center;gap:.8rem;justify-content:center}
+.stat .si{width:48px;height:48px;border-radius:12px;background:#e7effc;color:var(--blue);display:grid;place-items:center;flex:none}
+.stat b{font-size:1.5rem;font-weight:800;color:var(--navy);line-height:1}
+.stat small{color:var(--muted);font-size:.82rem}
+.stat+.stat{border-left:1px solid var(--border)}
+@media(max-width:820px){.stats{grid-template-columns:1fr 1fr}.stat+.stat{border-left:0}}
+
+/* Why choose */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.why .w{display:flex;flex-direction:column;gap:.5rem}
+.why .wi{width:52px;height:52px;border-radius:14px;display:grid;place-items:center}
+.why h4{font-size:1rem;font-weight:600;color:var(--navy)}
+.why p{color:var(--muted);font-size:.86rem}
+@media(max-width:820px){.why{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.why{grid-template-columns:1fr}}
+
+/* Footer */
+.foot{position:relative;background:#0f2247;color:#c6d0e4;margin-top:2.5rem}
+.foot .wave{position:absolute;top:-1px;left:0;right:0;transform:translateY(-99%);line-height:0;color:#0f2247}
+.foot .top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.4fr;gap:2rem;padding-block:clamp(36px,5vw,56px)}
+.foot .brand-blk h3{font-family:"Caveat",cursive;color:#fff;font-size:2rem;line-height:1.05;font-weight:700}
+.foot .brand-blk h3 .y{color:var(--yellow)}
+.foot .brand-blk p{color:#9fb0cc;margin-top:.8rem;font-size:.86rem;max-width:32ch}
+.foot .soc{display:flex;gap:.5rem;margin-top:1rem}
+.foot .soc a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.09);display:grid;place-items:center;color:#fff}
+.foot .soc a:hover{background:var(--blue)}
+.foot h4{color:#fff;font-size:.95rem;margin-bottom:.9rem;font-weight:600}
+.foot .col a{display:block;color:#9fb0cc;padding:.3rem 0;font-size:.88rem}
+.foot .col a:hover{color:#fff}
+.foot .news p{color:#9fb0cc;font-size:.86rem;margin-bottom:.8rem}
+.foot .news .box{display:flex;gap:.4rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:.35rem .35rem .35rem .8rem}
+.foot .news input{flex:1;background:transparent;border:0;outline:0;color:#fff;font:inherit;font-size:.86rem}
+.foot .news input::placeholder{color:#8ea0bd}
+.foot .news .sbtn{width:40px;height:38px;border-radius:8px;background:var(--blue);color:#fff;display:grid;place-items:center;flex:none}
+.foot .city{position:relative;line-height:0}
+.foot .bot{border-top:1px solid rgba(255,255,255,.1);padding-block:1.1rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.84rem;color:#8ea0bd}
+.foot .bot .heart{color:#ff5a6e}
+@media(max-width:900px){.foot .top{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="hd"><div class="wrap">
+  <a class="logo" href="#" aria-label="GoaBiz Directory">
+    <svg width="34" height="34" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path d="M24 6c-6 0-10 4-11 8 3-2 6-2 8-1-4 1-7 4-8 9 3-3 6-4 9-3-3 2-5 6-5 11h4c0-9 3-16 9-20-5 1-9 4-11 8" fill="#1f5fd0"/>
+      <path d="M24 6c5 0 9 3 11 7-3-2-6-2-8-1 4 1 7 4 8 8-3-2-6-3-9-2 3 2 5 5 5 9" stroke="#16a89a" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <rect x="22" y="24" width="4" height="16" rx="1" fill="#7a5a3a"/>
+    </svg>
+    <span class="txt"><b>Goa<span>Biz</span></b><small>DIRECTORY</small></span>
+  </a>
+  <nav class="main" aria-label="Primary">
+    <a href="#" class="active">Home</a><a href="#">Businesses</a><a href="#">Categories</a>
+    <a href="#">Deals</a><a href="#">Events</a><a href="#">Blog</a><a href="#">Contact</a>
+  </nav>
+  <div class="hd-act">
+    <a class="btn btn-blue" href="#">Add Business
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></a>
+    <a class="btn btn-white" href="#">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+      Login / Signup</a>
+  </div>
+</div></header>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="sky"></div><div class="sun"></div><div class="mtn"></div><div class="water"></div><div class="ov"></div>
+  <svg class="palm l" width="240" height="260" viewBox="0 0 240 260" fill="currentColor" aria-hidden="true">
+    <rect x="150" y="120" width="10" height="140" transform="rotate(6 155 190)"/>
+    <path d="M155 120C120 96 78 92 40 104c34-2 66 6 92 26-30-30-74-42-116-36 40-8 84 2 120 30-24-34-64-52-108-52 44-6 92 12 124 48-14-40-52-70-98-78 50 2 100 34 116 84z"/>
+  </svg>
+  <svg class="palm r" width="240" height="260" viewBox="0 0 240 260" fill="currentColor" aria-hidden="true">
+    <rect x="150" y="120" width="10" height="140" transform="rotate(6 155 190)"/>
+    <path d="M155 120C120 96 78 92 40 104c34-2 66 6 92 26-30-30-74-42-116-36 40-8 84 2 120 30-24-34-64-52-108-52 44-6 92 12 124 48-14-40-52-70-98-78 50 2 100 34 116 84z"/>
+  </svg>
+  <div class="wrap">
+    <h1>Discover. Connect. <span class="y">Grow.</span></h1>
+    <div class="sub">Goa's Most Trusted Business Directory</div>
+    <p class="lead">Find the best local businesses, services and professionals across Goa.</p>
+
+    <form class="search" role="search" onsubmit="return false">
+      <div class="f">
+        <span class="i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+        <span style="flex:1"><span class="lab">What are you looking for?</span><input type="search" placeholder="e.g. Restaurants, Salons, Hotels" aria-label="What are you looking for?"></span>
+      </div>
+      <div class="f">
+        <span class="i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <span style="flex:1"><span class="lab">Location</span><span class="ex" style="display:block">All Goa</span></span>
+      </div>
+      <div class="go"><button class="btn btn-blue" type="submit">Search</button></div>
+    </form>
+
+    <div class="popular">
+      <span class="l">Popular Searches:</span>
+      <a href="#">Restaurants</a><a href="#">Hotels</a><a href="#">Salons</a><a href="#">Electricians</a><a href="#">Plumbers</a><a href="#">Tour &amp; Travels</a>
+    </div>
+
+    <div class="trust">
+      <div class="t"><span class="ci" style="background:#1f5fd0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 4h12v16l-6-3-6 3z" fill="rgba(255,255,255,.25)"/><path d="M9 11l2 2 4-4"/></svg></span><span><b>Verified Businesses</b><small>100% Verified &amp; Trusted</small></span></div>
+      <div class="t"><span class="ci" style="background:#1faa5f"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5" fill="#fff"/></svg></span><span><b>Local &amp; Reliable</b><small>Businesses Near You</small></span></div>
+      <div class="t"><span class="ci" style="background:#f0a020"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-8-8V4h8z"/><circle cx="9" cy="8" r="1.3" fill="#fff"/></svg></span><span><b>Best Deals</b><small>Exclusive Offers</small></span></div>
+      <div class="t"><span class="ci" style="background:#7a4fd0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 12a8 8 0 0 1 16 0v4a3 3 0 0 1-3 3h-2v-6h5M4 12v4a3 3 0 0 0 3 3h0v-6H4"/></svg></span><span><b>24/7 Support</b><small>We're Here to Help</small></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Categories ===== -->
+<section class="sec" style="padding-top:64px"><div class="wrap">
+  <div class="sec-head">
+    <div><span class="eyebrow">Browse Categories</span><h2 class="h2" style="margin-top:.3rem">Explore Top Categories</h2></div>
+    <a class="btn btn-white" href="#">View All Categories
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+  <div class="cats">
+    <a class="catcard" href="#"><span class="ci" style="background:#ffe9d9;color:#f2793f"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3v7a3 3 0 0 0 6 0V3M7 3v18M17 3c-1.5 0-3 1.8-3 5s1.5 4 3 4v9"/></svg></span><b>Food &amp; Restaurants</b><small>325 Listings</small></a>
+    <a class="catcard" href="#"><span class="ci" style="background:#dce8ff;color:#3b6fe0"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v11M3 12h18v6M21 12v-2a3 3 0 0 0-3-3H9v5"/></svg></span><b>Hotels &amp; Stays</b><small>210 Listings</small></a>
+    <a class="catcard" href="#"><span class="ci" style="background:#ffe0ec;color:#e05c94"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M7 20c0-4 2-7 5-7s5 3 5 7"/></svg></span><b>Beauty &amp; Wellness</b><small>185 Listings</small></a>
+    <a class="catcard" href="#"><span class="ci" style="background:#d9f3e5;color:#1faa6b"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 7a3 3 0 0 1 4 4l-8 8-4 1 1-4 7-7zM13 8l3 3"/></svg></span><b>Home Services</b><small>450 Listings</small></a>
+    <a class="catcard" href="#"><span class="ci" style="background:#ece0ff;color:#8b53d6"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7zM9 8V6a3 3 0 0 1 6 0v2"/></svg></span><b>Shopping</b><small>320 Listings</small></a>
+    <a class="catcard" href="#"><span class="ci" style="background:#d6f0f0;color:#17a2a2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14L3 12l2-2 5 1 5-6 2 1-3 7 4 4-1 2-4-3-3 5-2-1z"/></svg></span><b>Travel &amp; Tourism</b><small>275 Listings</small></a>
+  </div>
+</div></section>
+
+<!-- ===== Featured Businesses ===== -->
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="sec-head">
+    <h2 class="h2">Featured Businesses</h2>
+    <a class="btn btn-white" href="#">View All Businesses
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+  <div class="feat">
+    <article class="bcard"><div class="ph"><img src="https://picsum.photos/seed/thalassa/440/320" alt="Thalassa Restaurant, Baga"><span class="vf"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg>Verified</span><button class="fav" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+      <div class="bd"><h3>Thalassa Restaurant</h3><div class="meta">Restaurant · Baga, North Goa</div>
+        <div class="row"><span class="rate"><span class="s"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6L12 16.9 6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg></span>4.6 <span>(230)</span></span><span class="open">Open</span><span class="close">· Closes 11 PM</span></div>
+      </div></article>
+    <article class="bcard"><div class="ph"><img src="https://picsum.photos/seed/acronresort/440/320" alt="Acron Waterfront Resort"><span class="vf"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg>Verified</span><button class="fav" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+      <div class="bd"><h3>Acron Waterfront Resort</h3><div class="meta">Hotel · Baga, North Goa</div>
+        <div class="row"><span class="rate"><span class="s"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6L12 16.9 6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg></span>4.7 <span>(512)</span></span><span class="open">Open</span><span class="close">· Closes 12 AM</span></div>
+      </div></article>
+    <article class="bcard"><div class="ph"><img src="https://picsum.photos/seed/lookssalon/440/320" alt="Looks Salon, Panjim"><span class="vf"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg>Verified</span><button class="fav" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+      <div class="bd"><h3>Looks Salon</h3><div class="meta">Beauty &amp; Wellness · Panjim</div>
+        <div class="row"><span class="rate"><span class="s"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6L12 16.9 6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg></span>4.8 <span>(198)</span></span><span class="open">Open</span><span class="close">· Closes 9 PM</span></div>
+      </div></article>
+    <article class="bcard"><div class="ph"><img src="https://picsum.photos/seed/goaelectric/440/320" alt="Goa Electric Solutions, Margao"><span class="vf"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg>Verified</span><button class="fav" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+      <div class="bd"><h3>Goa Electric Solutions</h3><div class="meta">Home Services · Margao</div>
+        <div class="row"><span class="rate"><span class="s"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6L12 16.9 6.6 19.6l1-6L3.3 9.4l6-.9z"/></svg></span>4.5 <span>(146)</span></span><span class="open">Open</span><span class="close">· Closes 8 PM</span></div>
+      </div></article>
+  </div>
+  <div class="dots"><i class="on"></i><i></i><i></i></div>
+</div></section>
+
+<!-- ===== CTA banner ===== -->
+<section class="sec" style="padding-top:0"><div class="wrap"><div class="cta">
+  <svg class="church" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <path d="M100 20v20M92 40h16M70 90h60v90H70zM70 90l30-24 30 24M85 110h12v18H85zM103 110h12v18h-12zM92 150h16v30H92z"/>
+    <path d="M40 120c6-4 12-4 18 0v60H40zM160 130c6-4 12-4 0 0" />
+  </svg>
+  <div class="in">
+    <div class="content"><h2>Are you a Business Owner?</h2><p>List your business today and reach thousands of potential customers across Goa.</p></div>
+    <div class="act"><a class="btn btn-white" href="#" style="padding:.8rem 1.3rem;font-size:1rem">Add Your Business
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></a>
+      <svg class="doodle" width="60" height="40" viewBox="0 0 60 40" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 4"><path d="M2 30c14-16 34-16 50-4"/><path d="M46 20l6 6-8 3"/></svg>
+    </div>
+  </div>
+</div></div></section>
+
+<!-- ===== Stats ===== -->
+<section class="sec" style="padding-top:0"><div class="wrap"><div class="stats">
+  <div class="stat"><span class="si"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h3M8 11h3M8 15h3M14 7h2M14 11h2M14 15h2"/></svg></span><span><b>5000+</b><br><small>Businesses Listed</small></span></div>
+  <div class="stat"><span class="si"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span><b>50+</b><br><small>Categories</small></span></div>
+  <div class="stat"><span class="si"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><span><b>100K+</b><br><small>Happy Users</small></span></div>
+  <div class="stat"><span class="si"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><b>25+</b><br><small>Cities in Goa</small></span></div>
+</div></div></section>
+
+<!-- ===== Why Choose ===== -->
+<section class="sec" style="padding-top:1rem"><div class="wrap">
+  <h2 class="h2" style="text-align:center;margin-bottom:2rem">Why Choose GoaBiz Directory?</h2>
+  <div class="why">
+    <div class="w"><span class="wi" style="background:#e7effc;color:#1f5fd0"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h4>Trusted &amp; Verified</h4><p>Every business is verified for your trust.</p></div>
+    <div class="w"><span class="wi" style="background:#e2f6ec;color:#1faa6b"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M6 19V11M11 19V7M16 19v-5M20 6l-5 3-4-3-5 4"/></svg></span><h4>Grow Your Business</h4><p>Increase visibility and attract more customers.</p></div>
+    <div class="w"><span class="wi" style="background:#fdeede;color:#f0a020"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h4l6 4V6l-6 4zM18 9a4 4 0 0 1 0 6"/></svg></span><h4>Marketing Support</h4><p>Promote your business with our marketing tools.</p></div>
+    <div class="w"><span class="wi" style="background:#eee6fb;color:#7a4fd0"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M15 20c0-2 1.5-4 4-4"/></svg></span><h4>Local Community</h4><p>We support local businesses and the Goa community.</p></div>
+  </div>
+</div></section>
+
+<!-- ===== Footer ===== -->
+<footer class="foot">
+  <div class="wave"><svg viewBox="0 0 1440 120" width="100%" height="120" preserveAspectRatio="none" fill="currentColor"><path d="M0 60c120-40 240-40 360-10s240 60 360 55 240-55 360-60 240 20 360 40v40H0z" opacity=".5"/><path d="M0 80c120-30 240-30 360-8s240 45 360 42 240-42 360-48 240 12 360 30v32H0z"/></svg></div>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand-blk">
+        <h3>Let's Build a<br><span class="y">Stronger Goa,</span> Together!</h3>
+        <p>GoaBiz Directory is your trusted platform to discover, connect and grow with the best businesses across Goa.</p>
+        <div class="soc">
+          <a href="#" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.4"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M22 6c-.7.3-1.5.5-2.3.6.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4 4 0 0 0-6.8 3.6A11 11 0 0 1 4 5a4 4 0 0 0 1.2 5.3c-.6 0-1.2-.2-1.7-.5a4 4 0 0 0 3.2 4 4 4 0 0 1-1.8.1 4 4 0 0 0 3.7 2.8A8 8 0 0 1 3 18.5 11 11 0 0 0 9 20c7 0 11-6 11-11v-.5c.8-.6 1.4-1.3 2-2z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M22 8c-.2-1.4-.8-2-2.2-2.2C18 5.5 12 5.5 12 5.5s-6 0-7.8.3C2.8 6 2.2 6.6 2 8c-.3 1.5-.3 4-.3 4s0 2.5.3 4c.2 1.4.8 2 2.2 2.2 1.8.3 7.8.3 7.8.3s6 0 7.8-.3c1.4-.2 2-.8 2.2-2.2.3-1.5.3-4 .3-4s0-2.5-.3-4zM10 15V9l5 3z"/></svg></a>
+        </div>
+      </div>
+      <div class="col"><h4>Quick Links</h4><a href="#">Home</a><a href="#">Businesses</a><a href="#">Categories</a><a href="#">Deals</a><a href="#">Events</a><a href="#">Blog</a><a href="#">Contact Us</a></div>
+      <div class="col"><h4>For Businesses</h4><a href="#">Add Your Business</a><a href="#">Business Login</a><a href="#">Why List Your Business?</a><a href="#">Business Tools</a><a href="#">Pricing Plans</a><a href="#">Support</a></div>
+      <div class="col"><h4>Resources</h4><a href="#">About Us</a><a href="#">How It Works</a><a href="#">FAQ</a><a href="#">Terms &amp; Conditions</a><a href="#">Privacy Policy</a></div>
+      <div class="news"><h4>Subscribe to our Newsletter</h4><p>Get updates on new businesses, deals &amp; events in Goa.</p>
+        <form class="box" onsubmit="return false"><input type="email" placeholder="Enter your email" aria-label="Email"><button class="sbtn" aria-label="Subscribe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button></form>
+      </div>
+    </div>
+  </div>
+  <!-- Goa street illustration band -->
+  <div class="city"><svg viewBox="0 0 1440 150" width="100%" height="150" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <rect width="1440" height="150" fill="#0c1c3d"/>
+    <g opacity=".95">
+      <rect x="120" y="70" width="60" height="80" fill="#e2574c"/><polygon points="120,70 150,52 180,70" fill="#b8433a"/>
+      <rect x="185" y="60" width="55" height="90" fill="#f0a93b"/><polygon points="185,60 212,44 240,60" fill="#c98a2c"/>
+      <rect x="245" y="78" width="58" height="72" fill="#4aa3b8"/><polygon points="245,78 274,60 303,78" fill="#3a8394"/>
+      <rect x="308" y="66" width="54" height="84" fill="#7bbf6a" /><polygon points="308,66 335,50 362,66" fill="#5f9a51"/>
+      <rect x="1040" y="72" width="58" height="78" fill="#e2574c"/><polygon points="1040,72 1069,54 1098,72" fill="#b8433a"/>
+      <rect x="1103" y="60" width="56" height="90" fill="#f0a93b"/><polygon points="1103,60 1131,44 1159,60" fill="#c98a2c"/>
+      <rect x="1164" y="76" width="54" height="74" fill="#5aa9c0"/><polygon points="1164,76 1191,58 1218,76" fill="#3a8394"/>
+      <rect x="1223" y="64" width="56" height="86" fill="#8e76c9"/><polygon points="1223,64 1251,48 1279,64" fill="#6f5aa8"/>
+      <!-- palms -->
+      <g fill="#123">
+        <rect x="70" y="90" width="7" height="60"/><path d="M73 90c-18-8-34-4-46 6 14-6 28-6 40 2-14-2-28 2-38 12 16-8 32-8 44 0-10-14-2-28 0-32z"/>
+        <rect x="1360" y="86" width="7" height="64"/><path d="M1363 86c18-8 34-4 46 6-14-6-28-6-40 2 14-2 28 2 38 12-16-8-32-8-44 0 10-14 2-28 0-32z"/>
+      </g>
+      <!-- road -->
+      <path d="M0 150 Q720 96 1440 150 L1440 150 L0 150Z" fill="#16294f"/>
+      <path d="M120 148 Q720 108 1320 148" stroke="#f6b71e" stroke-width="3" stroke-dasharray="14 12" fill="none" opacity=".8"/>
+      <!-- scooter -->
+      <g transform="translate(690,116)" fill="#f4a62a" stroke="#0c1c3d" stroke-width="2">
+        <circle cx="0" cy="18" r="9"/><circle cx="34" cy="18" r="9"/>
+        <path d="M0 18l8-16h10l6 8 10 8" fill="none" stroke="#f4a62a" stroke-width="4"/>
+        <rect x="6" y="0" width="12" height="6" rx="2"/>
+      </g>
+    </g>
+  </svg></div>
+  <div class="wrap"><div class="bot">
+    <span>© 2024 GoaBiz Directory. All Rights Reserved.</span>
+    <span>Made with <span class="heart">♥</span> in Goa</span>
+  </div></div>
+</footer>
+
+</body>
+</html>
