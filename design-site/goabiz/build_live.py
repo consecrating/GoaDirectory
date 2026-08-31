@@ -231,7 +231,7 @@ def html_doc():
     </div>
   </div></div>
   {PALM}
-  <div class="wrap"><div class="bot"><span>© 2026 Goa Directory. All Rights Reserved.</span><span style="display:inline-flex;align-items:center;gap:.35rem">Made with <svg width="14" height="14" viewBox="0 0 24 24" fill="#ff5a6e" aria-label="love"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg> in Goa</span></div></div>
+  <div class="wrap"><div class="bot"><span>© 2026 Goa Directory. All Rights Reserved.</span><span style="color:#8ea0bd">Developed by <a href="https://www.sanctify.in/" title="Advertising &amp; Digital Marketing Agency in Goa" target="_blank" rel="noopener" style="color:#cbd5e6;font-weight:600;text-decoration:none">Sanctify<sup style="font-size:.62em;font-weight:700;margin-left:1px">Goa</sup></a></span></div></div>
 </footer>
 
 </body>
