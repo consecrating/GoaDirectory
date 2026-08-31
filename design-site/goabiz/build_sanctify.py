@@ -18,7 +18,7 @@ FOOTER = re.search(r'(<footer class="foot">.*?</footer>)', SRC, re.S).group(1)
 def e(s): return html.escape(str(s), quote=True)
 
 BASE = "https://www.goadirectory.in"
-IMG = "https://raw.githubusercontent.com/consecrating/GoaDirectory/5ec0da5f0acc2f60efcb4eb1b66e1c3ee86dca3f/design-site/goabiz/assets/sanctify"
+IMG = "https://www.goadirectory.in/wp-content/uploads/sanctify"
 LISTING_URL = f"{BASE}/ads/sanctify/"
 PHONE = "+91 99233 52923"
 PHONE_TEL = "+919923352923"
