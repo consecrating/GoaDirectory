@@ -40,6 +40,38 @@ function goa_lt_footer() {
 __FOOTER__
 HTML;
 }
+function goa_lt_lightbox() {
+    return <<<'HTML'
+<div id="glb" class="lb" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+<button type="button" class="lb-close" aria-label="Close">&times;</button>
+<button type="button" class="lb-prev" aria-label="Previous image">&#8249;</button>
+<img class="lb-img" src="" alt="">
+<button type="button" class="lb-next" aria-label="Next image">&#8250;</button>
+<div class="lb-count"></div>
+</div>
+<script>
+(function(){
+  var gal=document.querySelector('.gal'); if(!gal) return;
+  var urls=[]; try{ urls=JSON.parse(gal.getAttribute('data-images')||'[]'); }catch(e){}
+  var links=[].slice.call(gal.querySelectorAll('a'));
+  if(!urls.length) urls=links.map(function(a){return a.getAttribute('href');});
+  if(!urls.length) return;
+  var lb=document.getElementById('glb'), img=lb.querySelector('.lb-img'),
+      prev=lb.querySelector('.lb-prev'), next=lb.querySelector('.lb-next'),
+      closeb=lb.querySelector('.lb-close'), count=lb.querySelector('.lb-count'), i=0;
+  function show(n){ i=n; img.src=urls[i]; prev.style.display=(i<=0)?'none':'grid'; next.style.display=(i>=urls.length-1)?'none':'grid'; count.textContent=(i+1)+' / '+urls.length; }
+  function open(n){ show(n); lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+  function close(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  links.forEach(function(a,idx){ a.addEventListener('click', function(e){ e.preventDefault(); open(idx < urls.length ? idx : 0); }); });
+  prev.addEventListener('click', function(e){ e.stopPropagation(); if(i>0) show(i-1); });
+  next.addEventListener('click', function(e){ e.stopPropagation(); if(i<urls.length-1) show(i+1); });
+  closeb.addEventListener('click', close);
+  lb.addEventListener('click', function(e){ if(e.target===lb) close(); });
+  document.addEventListener('keydown', function(e){ if(!lb.classList.contains('open')) return; if(e.key==='Escape') close(); else if(e.key==='ArrowLeft'&&i>0) show(i-1); else if(e.key==='ArrowRight'&&i<urls.length-1) show(i+1); });
+})();
+</script>
+HTML;
+}
 
 function goa_lt_digits($s) { return preg_replace('/\D+/', '', (string) $s); }
 
@@ -253,7 +285,7 @@ add_action('template_redirect', function () {
     echo '<div class="crumbbar"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="' . esc_url(home_url('/')) . '">Home</a><span class="sep">&rsaquo;</span><a href="' . esc_url($cat_url) . '">' . esc_html($cat_name) . '</a><span class="sep">&rsaquo;</span><span class="cur">' . esc_html($title) . '</span></nav><a class="back" href="' . esc_url($cat_url) . '">' . $svg('<path d="M19 12H5M11 6l-6 6 6 6"/>', 15) . ' Back to ' . esc_html($cat_name) . '</a></div></div>';
 
     echo '<main class="wrap"><div class="ldet"><div>';
-    if ($gal) { echo '<div class="gal">' . $gal . '</div>'; }
+    if ($gal) { echo '<div class="gal" data-images="' . esc_attr(wp_json_encode(array_values($imgs))) . '">' . $gal . '</div>'; }
     echo '<div class="tblk"><div class="eyebrow">' . esc_html($cat_name) . '</div><h1>' . esc_html($title) . '</h1>';
     echo '<div class="locline"><span style="color:var(--blue)">' . $svg($ico['pin'], 16) . '</span> ' . esc_html($address ?: $loc_display) . '</div>';
     echo '<div class="actions">' . $actions . '</div></div>';
@@ -285,6 +317,7 @@ add_action('template_redirect', function () {
     echo '</aside></div></main>';
 
     echo goa_lt_footer();
+    echo goa_lt_lightbox();
     if (function_exists('wp_footer')) { wp_footer(); }
     echo '</body></html>';
     exit;

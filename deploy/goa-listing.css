@@ -245,6 +245,17 @@ nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px
 .map .g{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:30px 30px;opacity:.7}
 .map .pin{position:relative;display:grid;gap:.5rem;justify-items:center;padding:1rem}
 .map .dot{width:20px;height:20px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 7px rgba(31,95,208,.2)}
+.gal a{cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:1000;background:rgba(10,15,30,.93);display:none;align-items:center;justify-content:center}
+.lb.open{display:flex}
+.lb .lb-img{max-width:92vw;max-height:86vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5);object-fit:contain;background:#0a0f1e}
+.lb button{position:absolute;border:0;background:rgba(255,255,255,.15);color:#fff;cursor:pointer;display:grid;place-items:center;border-radius:50%;line-height:1}
+.lb .lb-close{top:18px;right:18px;width:46px;height:46px;font-size:1.7rem}
+.lb .lb-prev,.lb .lb-next{top:50%;transform:translateY(-50%);width:54px;height:54px;font-size:2.1rem}
+.lb .lb-prev{left:18px}.lb .lb-next{right:18px}
+.lb button:hover{background:rgba(255,255,255,.3)}
+.lb .lb-count{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:#fff;font-weight:600;font-size:.85rem;background:rgba(0,0,0,.45);padding:.3rem .8rem;border-radius:999px}
+@media(max-width:600px){.lb .lb-prev,.lb .lb-next{width:44px;height:44px;font-size:1.7rem}}
 
 
 /* related cards + prose media for dynamic listing */

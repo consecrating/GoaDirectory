@@ -260,6 +260,17 @@ nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px
 .map .g{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:30px 30px;opacity:.7}
 .map .pin{position:relative;display:grid;gap:.5rem;justify-items:center;padding:1rem}
 .map .dot{width:20px;height:20px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 7px rgba(31,95,208,.2)}
+.gal a{cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:1000;background:rgba(10,15,30,.93);display:none;align-items:center;justify-content:center}
+.lb.open{display:flex}
+.lb .lb-img{max-width:92vw;max-height:86vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5);object-fit:contain;background:#0a0f1e}
+.lb button{position:absolute;border:0;background:rgba(255,255,255,.15);color:#fff;cursor:pointer;display:grid;place-items:center;border-radius:50%;line-height:1}
+.lb .lb-close{top:18px;right:18px;width:46px;height:46px;font-size:1.7rem}
+.lb .lb-prev,.lb .lb-next{top:50%;transform:translateY(-50%);width:54px;height:54px;font-size:2.1rem}
+.lb .lb-prev{left:18px}.lb .lb-next{right:18px}
+.lb button:hover{background:rgba(255,255,255,.3)}
+.lb .lb-count{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:#fff;font-weight:600;font-size:.85rem;background:rgba(0,0,0,.45);padding:.3rem .8rem;border-radius:999px}
+@media(max-width:600px){.lb .lb-prev,.lb .lb-next{width:44px;height:44px;font-size:1.7rem}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": ["LocalBusiness", "ProfessionalService", "MarketingAgency"], "@id": "https://www.goadirectory.in/ads/sanctify/#business", "name": "Sanctify \u2014 Digital Marketing Agency", "description": "Sanctify is a leading digital marketing and advertising agency in Vasco, Goa, offering SEO, web design, Google Ads, social media marketing, branding and content since 2012.", "url": "https://www.goadirectory.in/ads/sanctify/", "telephone": "+91 99233 52923", "email": "help@sanctify.in", "foundingDate": "2012", "priceRange": "$$", "image": "https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-1.png", "logo": "https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-1.png", "address": {"@type": "PostalAddress", "streetAddress": "#176/1-A, MES College Road, Bharat Nagar Colony, Zuarinagar", "addressLocality": "Vasco-da-Gama", "addressRegion": "Goa", "postalCode": "403726", "addressCountry": "IN"}, "areaServed": [{"@type": "AdministrativeArea", "name": "North Goa"}, {"@type": "AdministrativeArea", "name": "South Goa"}], "sameAs": ["https://www.sanctify.in/"], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "10:00", "closes": "19:00"}], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "143"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.goadirectory.in/"}, {"@type": "ListItem", "position": 2, "name": "Digital Marketing", "item": "https://www.goadirectory.in/ad-category/digital-marketing/"}, {"@type": "ListItem", "position": 3, "name": "Sanctify"}]}</script>
@@ -285,7 +296,7 @@ nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px
 
 <main class="wrap"><div class="ldet">
   <div>
-    <div class="gal"><a class="main" href="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-1.png"><img src="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-1.png" alt="Sanctify digital marketing agency team working in their Goa office"></a><a href="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-2.png"><img src="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-2.png" alt="SEO services in Goa improving Google search rankings for local businesses" loading="lazy"></a><a href="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-3.png"><img src="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-3.png" alt="Social media marketing content creation in Goa by Sanctify" loading="lazy"></a><a href="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-4.png"><img src="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-4.png" alt="Web design and development company in Goa by Sanctify" loading="lazy"></a><a href="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-5.png"><img src="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-5.png" alt="Branding and graphic design services in Goa by Sanctify" loading="lazy"></a><a href="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-6.png"><img src="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-6.png" alt="Google Ads and PPC campaign management in Goa by Sanctify" loading="lazy"><span class="more">+6 photos</span></a></div>
+    <div class="gal" data-images='["https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-1.png", "https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-2.png", "https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-3.png", "https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-4.png", "https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-5.png", "https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-6.png"]'><a class="main" href="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-1.png"><img src="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-1.png" alt="Sanctify digital marketing agency team working in their Goa office"></a><a href="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-2.png"><img src="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-2.png" alt="SEO services in Goa improving Google search rankings for local businesses" loading="lazy"></a><a href="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-3.png"><img src="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-3.png" alt="Social media marketing content creation in Goa by Sanctify" loading="lazy"></a><a href="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-4.png"><img src="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-4.png" alt="Web design and development company in Goa by Sanctify" loading="lazy"></a><a href="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-5.png"><img src="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-5.png" alt="Branding and graphic design services in Goa by Sanctify" loading="lazy"></a><a href="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-6.png"><img src="https://www.goadirectory.in/wp-content/uploads/sanctify/sanctify-6.png" alt="Google Ads and PPC campaign management in Goa by Sanctify" loading="lazy"><span class="more">+6 photos</span></a></div>
 
     <div class="tblk">
       <div class="eyebrow">Advertising &amp; Digital Marketing Agency</div>
@@ -420,5 +431,33 @@ nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px
   </svg></div>
   <div class="wrap"><div class="bot"><span>© 2026 Goa Directory. All Rights Reserved.</span><span style="color:#8ea0bd">Developed by <a href="https://www.sanctify.in/" title="Advertising &amp; Digital Marketing Agency in Goa" target="_blank" rel="noopener" style="color:#cbd5e6;font-weight:600;text-decoration:none">Sanctify<sup style="font-size:.62em;font-weight:700;margin-left:1px">Goa</sup></a></span></div></div>
 </footer>
+<div id="glb" class="lb" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+<button type="button" class="lb-close" aria-label="Close">&times;</button>
+<button type="button" class="lb-prev" aria-label="Previous image">&#8249;</button>
+<img class="lb-img" src="" alt="">
+<button type="button" class="lb-next" aria-label="Next image">&#8250;</button>
+<div class="lb-count"></div>
+</div>
+<script>
+(function(){
+  var gal=document.querySelector('.gal'); if(!gal) return;
+  var urls=[]; try{ urls=JSON.parse(gal.getAttribute('data-images')||'[]'); }catch(e){}
+  var links=[].slice.call(gal.querySelectorAll('a'));
+  if(!urls.length) urls=links.map(function(a){return a.getAttribute('href');});
+  if(!urls.length) return;
+  var lb=document.getElementById('glb'), img=lb.querySelector('.lb-img'),
+      prev=lb.querySelector('.lb-prev'), next=lb.querySelector('.lb-next'),
+      closeb=lb.querySelector('.lb-close'), count=lb.querySelector('.lb-count'), i=0;
+  function show(n){ i=n; img.src=urls[i]; prev.style.display=(i<=0)?'none':'grid'; next.style.display=(i>=urls.length-1)?'none':'grid'; count.textContent=(i+1)+' / '+urls.length; }
+  function open(n){ show(n); lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+  function close(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  links.forEach(function(a,idx){ a.addEventListener('click', function(e){ e.preventDefault(); open(idx < urls.length ? idx : 0); }); });
+  prev.addEventListener('click', function(e){ e.stopPropagation(); if(i>0) show(i-1); });
+  next.addEventListener('click', function(e){ e.stopPropagation(); if(i<urls.length-1) show(i+1); });
+  closeb.addEventListener('click', close);
+  lb.addEventListener('click', function(e){ if(e.target===lb) close(); });
+  document.addEventListener('keydown', function(e){ if(!lb.classList.contains('open')) return; if(e.key==='Escape') close(); else if(e.key==='ArrowLeft'&&i>0) show(i-1); else if(e.key==='ArrowRight'&&i<urls.length-1) show(i+1); });
+})();
+</script>
 </body>
 </html>

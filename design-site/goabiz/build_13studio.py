@@ -4,6 +4,7 @@ Reuses CSS + header + footer from sanctify.html; uses 6 site-hosted salon images
 from __future__ import annotations
 import re, json, html
 from pathlib import Path
+from build_sanctify import LIGHTBOX
 
 ROOT = Path(__file__).resolve().parent
 SRC = (ROOT / "sanctify.html").read_text(encoding="utf-8")
@@ -121,7 +122,7 @@ def build():
 </div></div>
 <main class="wrap"><div class="ldet">
   <div>
-    <div class="gal">{gal}</div>
+    <div class="gal" data-images='{json.dumps([im[0] for im in IMAGES])}'>{gal}</div>
     <div class="tblk">
       <div class="eyebrow">Beauty &amp; Care · Unisex Salon</div>
       <h1>13 Studio Unisex Salon — Beauty Salon &amp; Bridal Makeup in Dabolim, Goa</h1>
@@ -166,6 +167,7 @@ def build():
   </aside>
 </div></main>
 {FOOTER}
+{LIGHTBOX}
 </body>
 </html>"""
 
