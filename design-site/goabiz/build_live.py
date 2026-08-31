@@ -59,9 +59,10 @@ LATEST = [
     ("Vasco Pest Control","General Services","Vasco-da-Gama","vasco-pest-control-vasco-da-gama-south-goa","https://www.goadirectory.in/wp-content/uploads/2013/07/Vasco-Pest-Control-500x310.jpg"),
     ("Ria's Hair & Beauty Salon","Beauty & Care","Vasco-da-Gama","rias-hair-beauty-salon-beauty-salon-goa","https://www.goadirectory.in/wp-content/uploads/2022/04/Rias-Hair-Beauty-Salon-Parlour-Vasco-500x375.jpg"),
 ]
+# Blog posts (title, slug, real image URL, tag)
 BLOG = [
-    ("S Nizami Interior: The Best POP Contractor in Goa","s-nizami-interior-the-best-pop-contractor-in-goa","popblog","Interiors"),
-    ("Digital Marketing Agencies in Goa","digital-marketing-agencies-goa-social-media-marketing-companies-in-goa","dmblog","Marketing"),
+    ("S Nizami Interior: The Best POP Contractor in Goa","s-nizami-interior-the-best-pop-contractor-in-goa","https://www.goadirectory.in/wp-content/uploads/2016/12/22.jpeg","Interiors"),
+    ("Digital Marketing Agencies in Goa","digital-marketing-agencies-goa-social-media-marketing-companies-in-goa","https://www.goadirectory.in/wp-content/uploads/2017/06/Digital-Marketing-Agencies-Goa-500x173.jpg","Marketing"),
 ]
 POPULAR = [("Restaurants","restaurants-in-goa"),("Hotels & Resorts","hotels-resorts"),("Beauty & Care","beauty-care"),("Electronics","electronics-electrical-goods-mobile-shops-goa"),("Automobiles","automobiles"),("Tours & Travels","tours-travels")]
 
@@ -118,7 +119,7 @@ def html_doc():
     featured="".join(bcard(n,c,a,s,se,featured=True) for n,c,a,s,se in FEATURED)
     latest="".join(bcard(n,c,a,s,se) for n,c,a,s,se in LATEST[:6])
     popular="".join(f'<a href="{cat(s)}">{e(t)}</a>' for t,s in POPULAR)
-    blog="".join(f'<article class="bcard"><div class="ph"><a href="{BASE}/{slug}/"><img src="{pic(seed,440,300)}" alt="{e(title)}"></a></div><div class="bd"><span class="vf" style="position:static;display:inline-flex;margin-bottom:.4rem;background:#eaf0fb;color:var(--blue)">{e(tag)}</span><h3><a href="{BASE}/{slug}/" style="color:inherit">{e(title)}</a></h3><div class="row"><a class="open" style="color:var(--blue);font-weight:600" href="{BASE}/{slug}/">Read more {ic("arrow",14)}</a></div></div></article>' for title,slug,seed,tag in BLOG)
+    blog="".join(f'<article class="bcard"><div class="ph"><a href="{BASE}/{slug}/"><img src="{img}" alt="{e(title)}" loading="lazy" decoding="async"></a></div><div class="bd"><span class="vf" style="position:static;display:inline-flex;margin-bottom:.4rem;background:#eaf0fb;color:var(--blue)">{e(tag)}</span><h3><a href="{BASE}/{slug}/" style="color:inherit">{e(title)}</a></h3><div class="row"><a class="open" style="color:var(--blue);font-weight:600" href="{BASE}/{slug}/">Read more {ic("arrow",14)}</a></div></div></article>' for title,slug,img,tag in BLOG)
     return f"""<!doctype html>
 <html lang="en">
 <head>
