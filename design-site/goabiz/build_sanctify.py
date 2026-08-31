@@ -182,6 +182,22 @@ LISTING_CSS = """
 .map .dot{width:20px;height:20px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 7px rgba(31,95,208,.2)}
 """
 
+RED_CSS = """
+/* Red theme override for the Sanctify listing */
+:root{ --blue:#c0202a; --blue-d:#9c1a22; }
+.logo svg path[fill="#1f5fd0"]{fill:#c0202a}
+.btn-blue{box-shadow:0 8px 18px rgba(192,32,42,.28)}
+.eyebrow{color:#c0202a}
+.cinfo .ci{background:#fbe9ea}
+.svc .si{color:#c0202a}
+.svc .s{background:#fdf4f4}
+.chips a,.chips span{background:#fdf4f4}
+.revsum{background:#fdf4f4}
+.rev .av{background:linear-gradient(135deg,#c0202a,#e0574c)}
+.map .dot{background:#c0202a;box-shadow:0 0 0 7px rgba(192,32,42,.2)}
+.faq details[open] summary{color:#c0202a}
+"""
+
 def jsonld():
     biz={
         "@context":"https://schema.org","@type":["LocalBusiness","ProfessionalService","MarketingAgency"],
@@ -237,7 +253,8 @@ def build():
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap">
 <style>{CSS}
-{LISTING_CSS}</style>
+{LISTING_CSS}
+{RED_CSS}</style>
 {jsonld()}
 </head>
 <body>
