@@ -122,7 +122,8 @@ add_action('template_redirect', function () {
     if (is_admin() || (defined('DOING_AJAX') && DOING_AJAX) || (defined('REST_REQUEST') && REST_REQUEST) || is_feed() || is_robots()) { return; }
     if (!is_singular('ad_listing')) { return; }
     $path = rtrim(strtok($_SERVER['REQUEST_URI'] ?? '', '?'), '/');
-    if ($path === '/ads/sanctify') { return; } // dedicated redesign handles this
+    $dedicated = ['/ads/sanctify', '/ads/13-studio-unisex-salon-beauty-salon-goa'];
+    if (in_array($path, $dedicated, true)) { return; } // dedicated redesigns handle these
 
     $LIVE = true; // set false to gate behind ?newui=1 while testing
     if (!$LIVE && !isset($_GET['newui'])) { return; }
@@ -161,9 +162,22 @@ add_action('template_redirect', function () {
     $views = (int) get_post_meta($id, 'cp_total_count', true);
     $related = goa_lt_related($id, $term_id);
 
-    // meta description from content
-    $desc = trim(preg_replace('/\s+/', ' ', wp_strip_all_tags($content)));
-    $desc = mb_substr($desc, 0, 155);
+    // SEO title (ensure "Goa" appears), keyword-rich meta description
+    $seo_title = $title;
+    if (stripos($seo_title, 'goa') === false) { $seo_title .= ' in Goa'; }
+    $doc_title = $seo_title . ' | Goa Directory';
+    $clean = trim(preg_replace('/\s+/', ' ', wp_strip_all_tags($content)));
+    if ($clean === '') { $clean = $title . ' — ' . $cat_name . ' in ' . ($loc_display) . '.'; }
+    $desc = $clean;
+    if (mb_strlen($desc) > 158) { $desc = rtrim(preg_replace('/\s+\S*$/', '', mb_substr($desc, 0, 158))) . '…'; }
+    // category -> richer schema type
+    $type_map = [
+        'Restaurants' => 'Restaurant', 'Hotels & Resorts' => 'LodgingBusiness', 'Hotels' => 'LodgingBusiness',
+        'Beauty & Care' => 'BeautySalon', 'Automobiles' => 'AutoDealer', 'Hospitals and Clinics' => 'MedicalBusiness',
+        'Jewellery Shops' => 'JewelryStore', 'Fitness' => 'HealthClub', 'Education' => 'EducationalOrganization',
+        'Tours & Travels' => 'TravelAgency', 'General Services' => 'LocalBusiness',
+    ];
+    $biz_type = isset($type_map[$cat_name]) ? $type_map[$cat_name] : 'LocalBusiness';
 
     $ico = [
         'phone' => '<path d="M4 5c0 8 7 15 15 15l1-4-5-2-2 2a12 12 0 0 1-5-5l2-2-2-5-4 1z"/>',
@@ -230,7 +244,7 @@ add_action('template_redirect', function () {
     $og_img = $imgs ? $imgs[0] : '';
 
     $jsonld = [
-        '@context' => 'https://schema.org', '@type' => 'LocalBusiness',
+        '@context' => 'https://schema.org', '@type' => $biz_type,
         'name' => $title, 'url' => $permalink, 'image' => $og_img,
         'address' => ['@type' => 'PostalAddress',
             'streetAddress' => get_post_meta($id, 'cp_street', true),
@@ -251,11 +265,21 @@ add_action('template_redirect', function () {
     header('X-Goa-Listing: template');
 
     echo '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">';
-    echo '<title>' . esc_html($title) . ' | Goa Directory</title>';
+    echo '<title>' . esc_html($doc_title) . '</title>';
     echo '<meta name="description" content="' . esc_attr($desc) . '">';
+    echo '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">';
     echo '<link rel="canonical" href="' . esc_url($permalink) . '">';
-    echo '<meta property="og:type" content="business.business"><meta property="og:title" content="' . esc_attr($title) . '"><meta property="og:url" content="' . esc_url($permalink) . '">';
-    if ($og_img) { echo '<meta property="og:image" content="' . esc_url($og_img) . '">'; }
+    echo '<meta property="og:type" content="business.business">';
+    echo '<meta property="og:site_name" content="Goa Directory">';
+    echo '<meta property="og:locale" content="en_IN">';
+    echo '<meta property="og:title" content="' . esc_attr($seo_title) . '">';
+    echo '<meta property="og:description" content="' . esc_attr($desc) . '">';
+    echo '<meta property="og:url" content="' . esc_url($permalink) . '">';
+    if ($og_img) { echo '<meta property="og:image" content="' . esc_url($og_img) . '"><meta property="og:image:alt" content="' . esc_attr($title) . '">'; }
+    echo '<meta name="twitter:card" content="summary_large_image">';
+    echo '<meta name="twitter:title" content="' . esc_attr($seo_title) . '">';
+    echo '<meta name="twitter:description" content="' . esc_attr($desc) . '">';
+    if ($og_img) { echo '<meta name="twitter:image" content="' . esc_url($og_img) . '">'; }
     echo '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
     echo '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap">';
     echo '<style>' . $css . '</style>';
