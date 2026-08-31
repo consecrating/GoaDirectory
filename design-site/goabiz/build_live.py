@@ -43,20 +43,21 @@ CATS = [
     ("Hospitals & Clinics","hospitals-clinics-in-goa",3,"cross","#ffe6e2","#e0574c"),
 ]
 # Real featured listings (name, category, area, slug, seed)
+# Real featured listings (name, category, area, slug, real image URL)
 FEATURED = [
-    ("S Nizami Interiors","Interior & Furniture","Margao, South Goa","s-nizami-interiors-interior-decorator-margao-goa","nizami"),
-    ("Verlekar Jewellers","Jewellery Shops","Vasco-da-Gama","verlekar-jewellers-vasco-da-gama-south-goa","verlekar"),
-    ("13 Studio Unisex Salon","Beauty & Care","Dabolim","13-studio-unisex-salon-beauty-salon-goa","studio13"),
-    ("Mahalaxmi Electric Co","Electronics","Vasco-da-Gama","mahalaxmi-electric-wholesale-electrical-shop-vasco-goa","mahalaxmi"),
+    ("S Nizami Interiors","Interior & Furniture","Margao, South Goa","s-nizami-interiors-interior-decorator-margao-goa","https://www.goadirectory.in/wp-content/uploads/2016/12/WhatsApp-Image-2021-10-29-at-4.15.38-PM-1-500x388.jpeg"),
+    ("Verlekar Jewellers","Jewellery Shops","Vasco-da-Gama","verlekar-jewellers-vasco-da-gama-south-goa","https://www.goadirectory.in/wp-content/uploads/2013/07/Verlekar-Jewellers-Jewellery-Shop-in-Goa-500x352.jpg"),
+    ("13 Studio Unisex Salon","Beauty & Care","Dabolim","13-studio-unisex-salon-beauty-salon-goa","https://www.goadirectory.in/wp-content/uploads/2022/04/13-Studio-Unisex-Beauty-Salon-Dabolim-500x375.jpg"),
+    ("Mahalaxmi Electric Co","Electronics","Vasco-da-Gama","mahalaxmi-electric-wholesale-electrical-shop-vasco-goa","https://www.goadirectory.in/wp-content/uploads/2022/08/mahalaxmi-wholesale-electrical-shop-in-vasco-500x323.jpg"),
 ]
-# Real latest listings
+# Real latest listings (name, category, area, slug, real image URL)
 LATEST = [
-    ("Property, Civil & Criminal Lawyer","Education","Sancoale","property-civil-criminal-lawyer-in-sancoale-goa","lawyer"),
-    ("Saranya Mobile Repairing Store","Electronics","Vasco-da-Gama","mobile-repairing-store-vasco-goa","saranya"),
-    ("Royal Car & Bike Rental","Tours & Travels","Dabolim","self-drive-car-rental-near-dabolim-airport-goa","royalcar"),
-    ("A One Flowers","General Services","Vasco-da-Gama","a-one-flowers-florists-vasco-goa","aoneflowers"),
-    ("Vasco Pest Control","General Services","Vasco-da-Gama","vasco-pest-control-vasco-da-gama-south-goa","pest"),
-    ("Ria's Hair & Beauty Salon","Beauty & Care","Vasco-da-Gama","rias-hair-beauty-salon-beauty-salon-goa","rias"),
+    ("Property, Civil & Criminal Lawyer","Education","Sancoale","property-civil-criminal-lawyer-in-sancoale-goa","https://www.goadirectory.in/wp-content/uploads/2026/02/civil-lawyer-in-vasco-goa.jpg"),
+    ("Saranya Mobile Repairing Store","Electronics","Vasco-da-Gama","mobile-repairing-store-vasco-goa","https://www.goadirectory.in/wp-content/uploads/2023/06/mobile-repairing-store-in-vasco-500x333.jpg"),
+    ("Royal Car & Bike Rental","Tours & Travels","Dabolim","self-drive-car-rental-near-dabolim-airport-goa","https://www.goadirectory.in/wp-content/uploads/2023/06/self-drive-car-and-bike-rental-in-goa-500x297.png"),
+    ("A One Flowers","General Services","Vasco-da-Gama","a-one-flowers-florists-vasco-goa","https://www.goadirectory.in/wp-content/uploads/2023/05/A-One-Flowers-Best-Flower-Shop-in-Vasco-500x375.png"),
+    ("Vasco Pest Control","General Services","Vasco-da-Gama","vasco-pest-control-vasco-da-gama-south-goa","https://www.goadirectory.in/wp-content/uploads/2013/07/Vasco-Pest-Control-500x310.jpg"),
+    ("Ria's Hair & Beauty Salon","Beauty & Care","Vasco-da-Gama","rias-hair-beauty-salon-beauty-salon-goa","https://www.goadirectory.in/wp-content/uploads/2022/04/Rias-Hair-Beauty-Salon-Parlour-Vasco-500x375.jpg"),
 ]
 BLOG = [
     ("S Nizami Interior: The Best POP Contractor in Goa","s-nizami-interior-the-best-pop-contractor-in-goa","popblog","Interiors"),
@@ -92,9 +93,9 @@ def ic(n, s=26):
     }.get(n,"")
     return f'<svg width="{s}" height="{s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{p}</svg>'
 
-def bcard(name, catn, area, slug, seed, featured=False):
+def bcard(name, catn, area, slug, img, featured=False):
     fb = '<span class="vf">Featured</span>' if featured else ''
-    return f"""<article class="bcard"><div class="ph"><a href="{ad(slug)}"><img src="{pic(seed,440,320)}" alt="{e(name)}, {e(area)}"></a>{fb}<button class="fav" aria-label="Save {e(name)}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
+    return f"""<article class="bcard"><div class="ph"><a href="{ad(slug)}"><img src="{img}" alt="{e(name)}, {e(area)}" loading="lazy" decoding="async"></a>{fb}<button class="fav" aria-label="Save {e(name)}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 5c-2.5 4.4-9.5 9-9.5 9z"/></svg></button></div>
       <div class="bd"><h3><a href="{ad(slug)}" style="color:inherit">{e(name)}</a></h3><div class="meta">{e(catn)} · {e(area)}</div>
         <div class="row"><a class="open" style="color:var(--blue);font-weight:600" href="{ad(slug)}">View Listing {ic('arrow',14)}</a></div>
       </div></article>"""
