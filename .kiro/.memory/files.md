@@ -1,0 +1,2 @@
+- `SECURITY-AUDIT-2026-08-30.md` — final user-reviewable security audit, remediation, verification, rollback hashes, and remaining owner/hosting actions
+- `.kiro/` — durable task memory and verified acceptance-criteria record

@@ -1,0 +1,8 @@
+- Never delete or alter suspicious evidence before a validated local backup.
+- Preview phase only: do not change production WordPress or live content.
+- Preserve current URLs, listing facts, WordPress/ClassiPress requirements, and SEO equity.
+- Produce 10 meaningfully different design systems, not palette-only variants.
+- Generate exactly 20 previews: 10 homepage and 10 listing-detail images.
+- Use Magnific Nano Banana Pro at 1K quality only; do not silently switch models.
+- Keep the supplied Magnific credential ephemeral and never print, write, log, or commit it.
+- Use real GoaDirectory and Counto Motors content rather than invented businesses or fake metrics.

@@ -1,0 +1,7 @@
+LIVE: redesigned homepage deployed to https://www.goadirectory.in/ via must-use plugin.
+Files on server (explicit FTPS ftp.sanctify.co, user cloud@goadirectory.in):
+- wp-content/mu-plugins/goa-home.php  (intercepts template_redirect on is_front_page(), outputs goa-home.html, exit)
+- wp-content/mu-plugins/goa-home.html (the redesign; source = design-site/goabiz/home-live.html)
+Removed the earlier wp-content/themes/online-classified/front-page.php (it mixed with ClassiPress).
+ROLLBACK: delete the two mu-plugins files to instantly restore the original ClassiPress homepage. No DB changes were made; inner pages untouched.
+Follow-ups: swap placeholder card/blog images for real listing images; confirm brand name (Goa Directory vs GoaBiz); optional SEO/analytics wp_head integration.
