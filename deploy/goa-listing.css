@@ -289,3 +289,7 @@ nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px
 .sidesearch{display:flex;gap:.4rem}
 .sidesearch input{flex:1;min-height:44px;border:1.5px solid var(--border);border-radius:10px;padding:0 .8rem;font:inherit}
 .emptybox{padding:2.5rem;text-align:center;border:1px dashed var(--border);border-radius:16px;background:#fff;color:var(--muted)}
+
+/* mobile overflow guards */
+.layout-2>*{min-width:0}.feat>*{min-width:0}.bcard{min-width:0}.side>*{min-width:0}.card{min-width:0}.sidesearch input{min-width:0}.catlist a{min-width:0}
+@media(max-width:640px){.hero-search{flex-wrap:wrap}.hero-search input{flex:1 1 100%;min-width:0}}
