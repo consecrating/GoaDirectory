@@ -124,7 +124,7 @@ def html_doc():
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Goa Directory — Goa's Trusted Local Classifieds</title>
 <meta name="description" content="Discover trusted local businesses, shops, services and professionals across Goa. Browse categories, featured listings and post your ad on Goa Directory.">
 <link rel="canonical" href="{U['home']}">

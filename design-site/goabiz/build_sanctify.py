@@ -265,7 +265,7 @@ def build():
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Sanctify — Digital Marketing Agency in Goa | SEO, Web Design &amp; Ads</title>
 <meta name="description" content="Sanctify is a leading digital marketing agency in Vasco, Goa since 2012 — SEO, web design, Google Ads, social media, branding &amp; more. Rated {RATING}/5. Call {PHONE}.">
 <link rel="canonical" href="{LISTING_URL}">

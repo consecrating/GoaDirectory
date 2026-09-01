@@ -136,7 +136,7 @@ def build():
 
     out = []
     out.append('<!doctype html><html lang="en"><head><meta charset="utf-8">')
-    out.append('<meta name="viewport" content="width=device-width, initial-scale=1">')
+    out.append('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">')
     out.append(f'<title>{title}</title>')
     out.append(f'<meta name="description" content="{desc}">')
     out.append('<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">')

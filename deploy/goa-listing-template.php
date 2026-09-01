@@ -293,7 +293,7 @@ add_action('template_redirect', function () {
     header('Content-Type: text/html; charset=UTF-8');
     header('X-Goa-Listing: template');
 
-    echo '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">';
+    echo '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">';
     echo '<title>' . esc_html($doc_title) . '</title>';
     echo '<meta name="description" content="' . esc_attr($desc) . '">';
     echo '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">';

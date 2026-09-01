@@ -93,7 +93,7 @@ def build():
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>13 Studio Unisex Salon — Beauty Salon &amp; Bridal Makeup in Dabolim, Goa</title>
 <meta name="description" content="{e(desc)}">
 <meta name="robots" content="index,follow,max-image-preview:large">

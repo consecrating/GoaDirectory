@@ -124,7 +124,7 @@ function goa_ct_first_image($id) {
 }
 function goa_ct_head($title, $desc, $canonical, $img, $extra_ld = '') {
     $css = @file_get_contents(__DIR__ . '/goa-listing.css');
-    echo '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">';
+    echo '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">';
     echo '<title>' . esc_html($title) . '</title>';
     echo '<meta name="description" content="' . esc_attr($desc) . '">';
     echo '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">';

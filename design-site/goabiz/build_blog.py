@@ -142,7 +142,7 @@ def pub_date(b):
 
 def page_head(title, desc, canonical, img, ld_list):
     parts = ['<!doctype html><html lang="en"><head><meta charset="utf-8">',
-             '<meta name="viewport" content="width=device-width, initial-scale=1">',
+             '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">',
              f'<title>{esc(title)}</title>',
              f'<meta name="description" content="{esc(desc)}">',
              '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">',
