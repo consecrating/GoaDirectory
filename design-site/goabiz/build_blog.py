@@ -25,7 +25,7 @@ sys.path.insert(0, str(HERE))
 from blog_data import BLOGS, BRAND
 
 SITE = "https://www.goadirectory.in"
-IMG_URL = SITE + "/wp-content/uploads/goa-blog/blog-{n}.png"
+IMG_URL = SITE + "/wp-content/uploads/goa-blog/blog-{n}.jpg"
 
 # Two existing real posts to feature on the index (verified live titles + images)
 EXISTING = [
