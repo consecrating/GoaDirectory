@@ -293,3 +293,6 @@ nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px
 /* mobile overflow guards */
 .layout-2>*{min-width:0}.feat>*{min-width:0}.bcard{min-width:0}.side>*{min-width:0}.card{min-width:0}.sidesearch input{min-width:0}.catlist a{min-width:0}
 @media(max-width:640px){.hero-search{flex-wrap:wrap}.hero-search input{flex:1 1 100%;min-width:0}}
+
+/* prevent iOS input auto-zoom on mobile */
+@media(max-width:640px){input,select,textarea{font-size:16px!important}}
