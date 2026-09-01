@@ -28,7 +28,7 @@ function goa_ads_footer() { return <<<'HTML'
       <p>Goa Directory is your trusted platform to discover, connect and grow with the best local businesses across Goa.</p>
     </div>
     <div class="col"><h4>Quick Links</h4><a href="https://www.goadirectory.in/">Home</a><a href="https://www.goadirectory.in/ads/">Businesses</a><a href="https://www.goadirectory.in/categories/">Categories</a><a href="https://www.goadirectory.in/blog/">Blog</a><a href="https://www.goadirectory.in/plans/">Plans</a><a href="https://www.goadirectory.in/contact-us/">Contact Us</a></div>
-    <div class="col"><h4>For Businesses</h4><a href="https://www.goadirectory.in/create-listing/">Post an Ad</a><a href="https://www.goadirectory.in/login-2/?redirect_to=https%3A%2F%2Fwww.goadirectory.in%2F">Login</a><a href="https://www.goadirectory.in/plans/">Plans</a><a href="https://www.goadirectory.in/faq-help/">FAQ / Help</a></div>
+    <div class="col"><h4>For Businesses</h4><a href="https://www.goadirectory.in/create-listing/">Post an Ad</a><a href="https://www.goadirectory.in/form/">List Your Business</a><a href="https://www.goadirectory.in/login-2/?redirect_to=https%3A%2F%2Fwww.goadirectory.in%2F">Login</a><a href="https://www.goadirectory.in/plans/">Plans</a><a href="https://www.goadirectory.in/faq-help/">FAQ / Help</a></div>
     <div class="col"><h4>Resources</h4><a href="https://www.goadirectory.in/faq-help/">FAQ / Help</a><a href="https://www.goadirectory.in/privacy-policy/">Privacy Policy</a><a href="https://www.goadirectory.in/refund-policy/">Refund Policy</a><a href="https://www.goadirectory.in/terms-of-use/">Terms of Use</a><a href="https://www.goadirectory.in/contact-us/">Contact Us</a></div>
     <div class="news"><h4>Get Listed</h4><p>List your business on Goa Directory and reach local customers today.</p>
       <a class="btn btn-blue" href="https://www.goadirectory.in/create-listing/" style="width:100%">Post Your Ad <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -143,6 +143,8 @@ function goa_ads_head($title, $desc, $canonical, $img, $extra_ld = '') {
     echo '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
     echo '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap">';
     echo '<style>' . $css . '</style>';
+    // /ads/-scoped overrides: show 3 listings per row (was 4)
+    echo '<style>.feat{grid-template-columns:repeat(3,1fr)}@media(max-width:900px){.feat{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.feat{grid-template-columns:1fr}}</style>';
     if ($extra_ld) { echo $extra_ld; }
     echo '</head><body>';
     echo goa_ads_header();
@@ -180,7 +182,7 @@ function goa_ads_render_archive() {
 
     // hero with functional search
     echo '<section class="cat-hero"><div class="wrap"><span class="eyebrow">' . goa_ads_svg(goa_ads_icon('grid'),18) . ' All Businesses</span><h1>Explore local businesses across Goa</h1><p>' . number_format_i18n($total) . ' trusted listings — shops, services, hotels, restaurants and professionals all over Goa.</p>';
-    echo '<form class="hero-search" role="search" action="' . esc_url(home_url('/')) . '" method="get" style="display:flex;gap:.5rem;max-width:560px;margin:1.2rem auto 0;background:#fff;border-radius:12px;padding:.4rem;box-shadow:0 14px 34px rgba(20,35,80,.16)"><input type="search" name="s" placeholder="Search businesses in Goa…" style="flex:1;border:0;outline:0;font:inherit;padding:.6rem .8rem;color:var(--navy);background:transparent"><button class="btn btn-blue" type="submit">' . goa_ads_svg(goa_ads_icon('search'),16) . ' Search</button></form>';
+    echo '<form class="hero-search" role="search" action="' . esc_url(home_url('/')) . '" method="get" style="display:flex;gap:.5rem;max-width:820px;margin:1.2rem auto 0;background:#fff;border-radius:12px;padding:.4rem;box-shadow:0 14px 34px rgba(20,35,80,.16)"><input type="search" name="s" placeholder="Search businesses in Goa…" style="flex:1;border:0;outline:0;font:inherit;padding:.6rem .8rem;color:var(--navy);background:transparent"><button class="btn btn-blue" type="submit">' . goa_ads_svg(goa_ads_icon('search'),16) . ' Search</button></form>';
     echo '</div></section>';
 
     echo '<main class="sec"><div class="wrap"><div class="layout-2"><div>';
