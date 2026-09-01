@@ -46,13 +46,6 @@ CONTACT_CSS = """
 .ct-hero .eyebrow{color:#9fc0ff}
 .ct-hero h1{color:#fff;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;margin-top:.4rem}
 .ct-hero p{color:rgba(255,255,255,.9);max-width:56ch;margin:.7rem auto 0}
-.ct-quick{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:760px;margin:1.6rem auto 0}
-.ct-quick a{display:flex;flex-direction:column;align-items:center;gap:.4rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:1rem;color:#fff;transition:background .2s,transform .12s}
-.ct-quick a:hover{background:rgba(255,255,255,.18);transform:translateY(-3px)}
-.ct-quick .qi{width:44px;height:44px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center}
-.ct-quick b{font-size:.92rem}
-.ct-quick small{color:rgba(255,255,255,.75);font-size:.76rem}
-@media(max-width:620px){.ct-quick{grid-template-columns:1fr}}
 .ct-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:2rem;align-items:start}
 @media(max-width:860px){.ct-grid{grid-template-columns:1fr}}
 .formcard{background:#fff;border:1px solid var(--border);border-radius:18px;box-shadow:var(--sh-sm);padding:1.6rem}
@@ -79,7 +72,7 @@ CONTACT_CSS = """
 .iline a:hover{color:var(--blue)}
 .mapcard{border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--sh-sm);line-height:0}
 .mapcard iframe{width:100%;height:260px;border:0;display:block}
-.socrow{display:flex;gap:.5rem;margin-top:.4rem}
+.socrow{display:flex;gap:.5rem;margin-top:.9rem;flex-wrap:wrap}
 .socrow a{width:40px;height:40px;border-radius:50%;background:var(--soft);border:1px solid var(--border);display:grid;place-items:center;color:#42506e}
 .socrow a:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
 """
@@ -103,6 +96,20 @@ I = {
 
 # Google Maps embed of Goa (generic region — honest, no fabricated street address)
 MAP_SRC = "https://www.google.com/maps?q=Goa,India&output=embed"
+
+def soc(path, s=18):
+    return (f'<svg width="{s}" height="{s}" viewBox="0 0 24 24" fill="currentColor" '
+            f'aria-hidden="true">{path}</svg>')
+
+# Brand social icons (fill-based). Links are placeholders (#) per request.
+SOCIALS = [
+ ("Facebook",  '<path d="M13 22v-8h2.7l.4-3.1H13V8.9c0-.9.3-1.5 1.6-1.5h1.7V4.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H6.9V14h2.7v8z"/>'),
+ ("Instagram", '<path d="M12 2c2.7 0 3 0 4.1.1 1 0 1.7.2 2.3.4.6.3 1.1.6 1.6 1.1s.8 1 1.1 1.6c.2.6.4 1.3.4 2.3.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1-.2 1.7-.4 2.3-.3.6-.6 1.1-1.1 1.6s-1 .8-1.6 1.1c-.6.2-1.3.4-2.3.4-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1 0-1.7-.2-2.3-.4-.6-.3-1.1-.6-1.6-1.1s-.8-1-1.1-1.6c-.2-.6-.4-1.3-.4-2.3C2 15 2 14.7 2 12s0-3 .1-4.1c0-1 .2-1.7.4-2.3.3-.6.6-1.1 1.1-1.6s1-.8 1.6-1.1c.6-.2 1.3-.4 2.3-.4C9 2 9.3 2 12 2zm0 1.8c-2.7 0-3 0-4 .1-.8 0-1.2.2-1.5.3-.4.1-.7.3-1 .6s-.5.6-.6 1c-.1.3-.3.7-.3 1.5-.1 1-.1 1.3-.1 4s0 3 .1 4c0 .8.2 1.2.3 1.5.1.4.3.7.6 1s.6.5 1 .6c.3.1.7.3 1.5.3 1 .1 1.3.1 4 .1s3 0 4-.1c.8 0 1.2-.2 1.5-.3.4-.1.7-.3 1-.6s.5-.6.6-1c.1-.3.3-.7.3-1.5.1-1 .1-1.3.1-4s0-3-.1-4c0-.8-.2-1.2-.3-1.5-.1-.4-.3-.7-.6-1s-.6-.5-1-.6c-.3-.1-.7-.3-1.5-.3-1-.1-1.3-.1-4-.1zm0 3.1a5.1 5.1 0 1 1 0 10.2 5.1 5.1 0 0 1 0-10.2zm0 1.8a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6zm5.3-3.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/>'),
+ ("Twitter",   '<path d="M18.9 2H22l-7.6 8.7L23 22h-6.8l-5.3-6.9L4.8 22H2l8.1-9.3L1.6 2h6.9l4.8 6.4L18.9 2zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/>'),
+ ("Pinterest", '<path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-4.9s-.3-.6-.3-1.5c0-1.4.8-2.4 1.8-2.4.9 0 1.3.6 1.3 1.4 0 .9-.5 2.1-.8 3.3-.3 1 .5 1.8 1.5 1.8 1.8 0 3.1-1.9 3.1-4.6 0-2.4-1.7-4.1-4.2-4.1a4.4 4.4 0 0 0-4.5 4.4c0 .9.3 1.5.8 2 .1.1.1.2.1.4l-.3 1.1c0 .2-.2.2-.4.1-1.1-.5-1.7-1.9-1.7-3.1 0-2.5 2.1-5.6 6.3-5.6 3.3 0 5.5 2.4 5.5 5 0 3.4-1.9 6-4.7 6-.9 0-1.8-.5-2.1-1.1l-.6 2.3c-.2.8-.7 1.6-1.1 2.2A10 10 0 1 0 12 2z"/>'),
+ ("LinkedIn",  '<path d="M6.9 8.8H3.6V21h3.3zM5.3 3.4a1.9 1.9 0 1 0 0 3.9 1.9 1.9 0 0 0 0-3.9zM21 21v-6.7c0-3.3-.7-5.8-4.6-5.8-1.8 0-3 1-3.5 2h-.1V8.8H9.5V21h3.3v-6c0-1.6.3-3.2 2.3-3.2s2.1 1.8 2.1 3.3V21z"/>'),
+ ("YouTube",   '<path d="M23 12s0-3.3-.4-4.9a2.5 2.5 0 0 0-1.8-1.8C19.2 5 12 5 12 5s-7.2 0-8.8.4A2.5 2.5 0 0 0 1.4 7.1C1 8.7 1 12 1 12s0 3.3.4 4.9a2.5 2.5 0 0 0 1.8 1.8C4.8 19 12 19 12 19s7.2 0 8.8-.4a2.5 2.5 0 0 0 1.8-1.8C23 15.3 23 12 23 12zm-13.3 3.2V8.8L15.5 12z"/>'),
+]
 
 def build():
     title = "Contact Us | Goa Directory"
@@ -156,14 +163,7 @@ def build():
                '<h1>Get in touch with Goa Directory</h1>'
                '<p>Questions about listing your business, payments or your account? '
                'Reach out and our team will get back to you quickly.</p>'
-               '<div class="ct-quick">'
-               f'<a href="tel:{PHONE_TEL}"><span class="qi">{svg(I["phone"],22)}</span>'
-               f'<b>Call us</b><small>{PHONE_DISPLAY}</small></a>'
-               f'<a href="{WA}" target="_blank" rel="noopener"><span class="qi">{svg(I["wa"],22)}</span>'
-               '<b>WhatsApp</b><small>Chat with us</small></a>'
-               f'<a href="mailto:{EMAIL}"><span class="qi">{svg(I["mail"],22)}</span>'
-               f'<b>Email</b><small>{EMAIL}</small></a>'
-               '</div></div></section>')
+               '</div></section>')
 
     # main grid
     out.append('<main class="sec"><div class="wrap"><div class="ct-grid">')
@@ -190,15 +190,17 @@ def build():
                '<div class="field"><label for="cf-message">Message</label>'
                '<textarea id="cf-message" name="message" placeholder="Write your message here…" required></textarea></div>'
                f'<button class="btn btn-blue" type="submit">{svg(I["send"],17)} Send Message</button>'
-               f'<p class="formnote">Prefer chat? <a href="{WA}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600">Message us on WhatsApp</a> or call <a href="tel:{PHONE_TEL}" style="color:var(--blue);font-weight:600">{PHONE_DISPLAY}</a>.</p>'
+               '<p class="formnote">Join 100+ Goa businesses growing every day with Goa Directory.</p>'
                '</form>'
                '</div>')
 
     # info column
     out.append('<div>')
     out.append('<div class="infocard"><h3>Contact information</h3>'
-               f'<div class="iline"><span class="ii">{svg(I["phone"])}</span><div><b>Phone &amp; WhatsApp</b>'
+               f'<div class="iline"><span class="ii">{svg(I["phone"])}</span><div><b>Phone</b>'
                f'<a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a></div></div>'
+               f'<div class="iline"><span class="ii">{svg(I["wa"])}</span><div><b>WhatsApp</b>'
+               f'<a href="{WA}" target="_blank" rel="noopener">{PHONE_DISPLAY} — chat with us</a></div></div>'
                f'<div class="iline"><span class="ii">{svg(I["mail"])}</span><div><b>Email</b>'
                f'<a href="mailto:{EMAIL}">{EMAIL}</a></div></div>'
                f'<div class="iline"><span class="ii">{svg(I["pin"])}</span><div><b>Location</b>'
@@ -211,11 +213,7 @@ def build():
                'customers across Goa. Add your business to Goa Directory in minutes.</p>'
                f'<a class="btn btn-blue" style="width:100%" href="{SITE}/create-listing/">{svg(I["plus"],16)} Post an Ad</a>'
                '<div class="socrow">'
-               '<a href="https://www.facebook.com/goadirectory" target="_blank" rel="noopener" aria-label="Facebook">'
-               + svg(I["fb"]) + '</a>'
-               '<a href="https://www.instagram.com/goadirectory" target="_blank" rel="noopener" aria-label="Instagram">'
-               + svg(I["ig"]) + '</a>'
-               f'<a href="{WA}" target="_blank" rel="noopener" aria-label="WhatsApp">' + svg(I["wa"]) + '</a>'
+               + "".join(f'<a href="#" aria-label="{name}">{soc(path)}</a>' for name, path in SOCIALS) +
                '</div></div>')
     out.append(f'<div class="mapcard"><iframe src="{MAP_SRC}" loading="lazy" '
                'referrerpolicy="no-referrer-when-downgrade" title="Goa map"></iframe></div>')
