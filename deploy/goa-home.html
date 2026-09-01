@@ -178,7 +178,7 @@ nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px
 .foot .bot .heart{color:#ff5a6e}
 @media(max-width:900px){.foot .top{grid-template-columns:1fr 1fr}}
 </style>
-</head>
+<style>.blogfeat{grid-template-columns:repeat(3,1fr)}@media(max-width:900px){.blogfeat{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.blogfeat{grid-template-columns:1fr}}</style></head>
 <body>
 
 <header class="hd"><div class="wrap">
@@ -284,7 +284,7 @@ nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px
 
 <section class="sec" style="padding-top:0"><div class="wrap">
   <div class="sec-head"><div><span class="eyebrow">From the Blog</span><h2 class="h2" style="margin-top:.3rem">Guides &amp; Articles</h2></div><a class="btn btn-white" href="https://www.goadirectory.in/blog/">View More Articles <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-  <div class="feat" style="grid-template-columns:repeat(3,1fr)">%%LATEST_BLOGS%%</div>
+  <div class="feat blogfeat">%%LATEST_BLOGS%%</div>
 </div></section>
 
 <footer class="foot">
