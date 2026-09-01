@@ -175,7 +175,7 @@ nav.main a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px
 .crumbs a{color:var(--muted)}.crumbs a:hover{color:var(--blue)}.crumbs .cur{color:var(--navy);font-weight:600}.crumbs .sep{color:#c3ccdb}
 .back{color:var(--blue);font-weight:600;font-size:.85rem;display:inline-flex;align-items:center;gap:.4rem}
 .ldet{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:1.6rem;align-items:start;padding-block:1.4rem}
-@media(max-width:980px){.ldet{grid-template-columns:1fr}}
+@media(max-width:980px){.ldet{grid-template-columns:minmax(0,1fr)}.ldet>*{min-width:0}}
 .gal{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:130px;gap:.6rem;border-radius:16px;overflow:hidden}
 .gal a{position:relative;overflow:hidden;background:#eef;border-radius:12px}
 .gal a img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.gal a:hover img{transform:scale(1.05)}
