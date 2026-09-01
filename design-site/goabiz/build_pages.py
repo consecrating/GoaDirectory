@@ -136,17 +136,17 @@ def sections_to_html(sections):
     out = []
     toc = ['<div class="toc"><b>On this page</b><ul>']
     for sid, hd, _ in sections:
-        toc.append(f'<li><a href="#{sid}">{e(hd)}</a></li>')
+        toc.append(f'<li><a href="#{sid}">{hd}</a></li>')
     toc.append('</ul></div>')
     out.append("".join(toc))
     for sid, hd, blocks in sections:
-        out.append(f'<h2 id="{sid}">{e(hd)}</h2>')
+        out.append(f'<h2 id="{sid}">{hd}</h2>')
         for b in blocks:
             kind = b[0]
             if kind == 'p':
                 out.append(f'<p>{b[1]}</p>')
             elif kind == 'h3':
-                out.append(f'<h3>{e(b[1])}</h3>')
+                out.append(f'<h3>{b[1]}</h3>')
             elif kind == 'ul':
                 out.append('<ul>' + "".join(f'<li>{it}</li>' for it in b[1]) + '</ul>')
             elif kind == 'callout':
@@ -418,7 +418,7 @@ def build_privacy():
 # =============================================================== FAQ
 def build_faq():
     url = SITE + "/faq-help/"
-    title = "FAQ &amp; Help — Listing Your Business in Goa | Goa Directory"
+    title = "FAQ & Help — Listing Your Business in Goa | Goa Directory"
     desc = ("Answers to common questions about listing your business on Goa Directory — how to add a listing, "
             "plans and pricing, editing, photos, categories, payments and support.")
     GROUPS = [
@@ -481,7 +481,7 @@ def build_faq():
 
     parts = [head(title, desc, url, [breadcrumb_ld("FAQ / Help", url), faqpage])]
     parts.append(crumb("FAQ / Help"))
-    parts.append(hero("Help Centre", "FAQ &amp; Help",
+    parts.append(hero("Help Centre", "FAQ & Help",
                       "Everything you need to know about listing and growing your business on Goa Directory."))
     parts.append('<main class="sec"><div class="wrap"><div class="faq">')
     for cat, qas in GROUPS:
