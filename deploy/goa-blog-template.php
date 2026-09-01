@@ -9,9 +9,24 @@ add_action('template_redirect', function () {
     if (is_admin() || (defined('DOING_AJAX') && DOING_AJAX) || (defined('REST_REQUEST') && REST_REQUEST) || is_feed() || is_robots()) { return; }
     $path = trim(strtok($_SERVER['REQUEST_URI'] ?? '', '?'), '/');
 
-    // /blog  -> redesigned index
+    // /blog  -> redesigned index (page 1)
     if ($path === 'blog') {
         $f = __DIR__ . '/goa-blog-index.html';
+        if (is_readable($f)) {
+            status_header(200);
+            header('Content-Type: text/html; charset=UTF-8');
+            header('X-Goa-Blog: index');
+            readfile($f);
+            exit;
+        }
+        return;
+    }
+
+    // /blog/page/N  -> paginated index (9 posts per page)
+    if (preg_match('#^blog/page/([0-9]+)/?$#', $path, $m)) {
+        $n = (int) $m[1];
+        $file = ($n <= 1) ? 'goa-blog-index.html' : ('goa-blog-' . $n . '.html');
+        $f = __DIR__ . '/' . $file;
         if (is_readable($f)) {
             status_header(200);
             header('Content-Type: text/html; charset=UTF-8');
