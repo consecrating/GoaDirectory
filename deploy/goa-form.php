@@ -209,8 +209,8 @@ function goa_form_submit() {
     }
     update_post_meta($post_id, 'goa_image_count', $count);
 
-    // notify admin
-    $admin = get_option('admin_email');
+    // notify admin + Goa Directory inbox
+    $recipients = array_values(array_unique(array_filter([get_option('admin_email'), 'help@goadirectory.in'])));
     $edit  = admin_url('post.php?post=' . $post_id . '&action=edit');
     $lines = [
         'A new business listing was submitted on Goa Directory and is awaiting review.',
@@ -227,7 +227,8 @@ function goa_form_submit() {
         '',
         'Review & publish: ' . $edit,
     ];
-    wp_mail($admin, 'New listing submission: ' . $biz, implode("\n", $lines));
+    $reply = $email ? ['Reply-To: ' . $person . ' <' . $email . '>'] : [];
+    wp_mail($recipients, 'New listing submission: ' . $biz, implode("\n", $lines), $reply);
 
     goa_form_redirect('sent=1');
 }

@@ -170,7 +170,7 @@ PLANS_CSS = """
 .planpick label:has(input:checked){border-color:var(--blue);background:#f3f8ff}
 .planpick .pk b{display:block;color:var(--navy);font-size:.95rem}
 .planpick .pk small{color:var(--muted);font-size:.8rem}
-.dropzone{border:1.6px dashed #c4d2ea;border-radius:12px;padding:1.3rem;text-align:center;background:#f8fbff;cursor:pointer;transition:border-color .15s,background .15s}
+.dropzone{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1.6px dashed #c4d2ea;border-radius:12px;padding:1.6rem 1.3rem;background:#f8fbff;cursor:pointer;transition:border-color .15s,background .15s}
 .dropzone:hover{border-color:var(--blue);background:#f2f7ff}
 .dropzone .di{color:var(--blue);margin-bottom:.4rem}
 .dropzone b{color:var(--navy);font-size:.95rem}
